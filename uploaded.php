@@ -34,24 +34,24 @@ and open the template in the editor.
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
               <table>
                  <TD>
-                     <form method="link" action="upload.html">
+                     <form method="link" action="upload.php">
                         <input type="submit" value="Upload">
                     </form>
                  </TD>
                  <td>
-                     <form method="link" action="remove.html">
+                     <form method="link" action="remove.php">
                          <input type="submit" value="Remove Books">
                      </form>
                  </td>
 
                  <TD>
-                     <form method="link" action="browse.html">
+                     <form method="link" action="browse.php">
                         <input type="submit" value="Browse">
                      </form>
                  </TD>
 
                  <TD>
-                     <form method="link" action="inbox.html">
+                     <form method="link" action="inbox.php">
                          <input type="submit" value="messages">
                       </form>
                  </TD>
@@ -60,10 +60,10 @@ and open the template in the editor.
             
           <table>
               <tr>
-                  <td> <a href="bookPage.html" target="_self">book jpeg </a></td>
+                  <td> <a href="bookPage.php" target="_self">book jpeg </a></td>
               </tr>
               <tr>
-                  <td> <a href="bookPage.html" target="_self">book title </a></td>
+                  <td> <a href="bookPage.php" target="_self">book title </a></td>
               </tr>
           </table>
         </div>
