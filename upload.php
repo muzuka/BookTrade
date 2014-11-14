@@ -21,7 +21,7 @@ and open the template in the editor.
             </div>
                 <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
                 <div>
-                    <form style="text-align:center" method="post" action="index.html">
+                    <form style="text-align:center" method="post" action="index.php">
                         <p><input type="text" name="Book Title" value="" placeholder="Title"></p>
                         <p><input type="text" name="Author" value="" placeholder="Author"</p>
                         <p><input type="text" name="Publisher" value="" placeholder="Publisher"></p>
@@ -29,7 +29,7 @@ and open the template in the editor.
                         <p><input type="file" name="picture of book" id="fileUploaded"></p>
                         <p></p>
                     </form>
-                        <form  style="text-align: center"method="link" action="uploaded.html">
+                        <form  style="text-align: center"method="link" action="uploaded.php">
                             <p><input type="submit" value="submit" name="submit"></p>
                         </form>
                 </div>
