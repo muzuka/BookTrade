@@ -17,12 +17,12 @@ and open the template in the editor.
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
               <table>
                  <TD>
-                     <form method="link" action="removed.html">
+                     <form method="link" action="removed.php">
                         <input type="submit" value="delete">
                     </form>
                  </TD>
                  <td>
-                     <form method="link" action="userpage.html">
+                     <form method="link" action="userpage.php">
                          <input type="submit" value="cancel">
                      </form>
                  </td>
@@ -30,10 +30,10 @@ and open the template in the editor.
             </div>
           <table>
               <tr>
-                  <td> <a href="bookPage.html" target="_self">book jpeg </a></td>
+                  <td> <a href="bookPage.php" target="_self">book jpeg </a></td>
               </tr>
               <tr>
-                  <td> <a href="bookPage.html" target="_self">book title </a></td>
+                  <td> <a href="bookPage.php" target="_self">book title </a></td>
               </tr>
           </table>
           <div> what i want here is to be able to highlight the books and then hit the delet button to remove them.</div>
