@@ -20,7 +20,7 @@ and open the template in the editor.
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                 <table> 
                      <TD>
-                         <form method="link" action="WriteaMessage.html">
+                         <form method="link" action="WriteaMessage.php">
                             <input type="submit" value=" send message">
                         </form>
                      </TD>
@@ -31,7 +31,7 @@ and open the template in the editor.
                     <td> 
                         pictures of books offered.
                         <p></p>
-                        <a href="bookpage.html" targe="_self"> book name</a>
+                        <a href="bookpage.php" targe="_self"> book name</a>
                     </td>
                 </tr>
                 <tr>
