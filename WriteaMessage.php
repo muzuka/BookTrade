@@ -26,12 +26,12 @@ and open the template in the editor.
                     <table>
                         <tr>
                             <td>
-                                <form method="link" action="sent.html">
+                                <form method="link" action="sent.php">
                                 <input type="submit" value="Send" name="send">
                                 </form>
                             </td>
                             <td>
-                                <form method="link" action="inbox.html">
+                                <form method="link" action="inbox.php">
                                     <input type="submit" value="Delete">
                                 </form>
                             </td>
