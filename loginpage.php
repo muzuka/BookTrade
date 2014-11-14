@@ -32,6 +32,9 @@
                       </label>
                     </p>
                     <p class="submit"><input type="submit" name="commit" value="Login"></p>
+                    <p> </p>
+                    Not a Member?
+                    <p> <a href="register.php" target="_self"> Create an Account</p>
                   </form>
                 </div>
             </section>
