@@ -24,7 +24,7 @@ and open the template in the editor.
                 <p><input type="text" name="login" value="" placeholder="Email"></p>
                 <p><input type="password" name="password" value="" placeholder="Password"></p>
                 <p>confirm Password </p>
-                <p><input type="password" name="compare" value="" placeholder="password"</p>
+                <p><input type="password" name="compare" value="" placeholder="password" method="link" action="loginPage.php"></p>
                 <p class="submit"><input type="submit" name="commit" value="Submit"></p>
            </form>
         </div>
