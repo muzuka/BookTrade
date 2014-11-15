@@ -15,7 +15,7 @@ and open the template in the editor.
             <a href="userpage.php"> [return to user page]</a> <a>[log out]</a>
         </div>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-            <h1>Upload</h1>
+            <h1>Register</h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                 <p></p>
             </div>
