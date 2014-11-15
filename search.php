@@ -7,9 +7,10 @@
 include "dataConnect.php";
 
 $search_term = $_POST["search"];
+$search_term = mysqli_escape_string($conn, $search_term);
 
 // query database
-$query = "SELECT Author, Title FROM Book WHERE Author = '$search_term' OR Title = '$search_term';";
+$query = "SELECT bID, Author, Title FROM Book WHERE Author LIKE '%$search_term%' OR Title LIKE '%$search_term%';";
 
 // get result
 $result = mysqli_query($conn, $query);
@@ -25,9 +26,13 @@ else {
     // make table
     for($i = 0; $i < $numOfRows; $i++) {
         $currentRow = mysqli_fetch_assoc($result);
-        echo $currentRow["Title"];
+        
+        $title = $currentRow["Title"];
+        $author = $currentRow["Author"];
+        
+        echo "<a href='bookPage.php'>$title</a>";
         echo "<br />";
-        echo $currentRow["Author"];
+        echo "<a href='bookPage.php'>$title</a>";
         echo "<br />";
     }
     
