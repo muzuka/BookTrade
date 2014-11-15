@@ -8,16 +8,15 @@ include "dataConnect.php";
 
 $search_term = $_POST["search"];
 
-$search_term = mysql_real_escape_string($search_term);
 // query database
 $query = "SELECT Author, Title FROM Book WHERE Author = '$search_term' OR Title = '$search_term';";
 
 // get result
-$result = mysql_query($query);
+$result = mysqli_query($conn, $query);
 
 // check result
-if(mysql_num_rows($result) == 0) {
-    echo mysql_error();
+if(mysqli_num_rows($result) == 0) {
+    echo mysqli_error($conn);
     echo "<br />";
     echo "No results found.";
 }
