@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newUser = "INSERT INTO User(Username, eMail, Pword) VALUES ('$un', '$em', '$pw');";
 
     if ($conn->query($newUser) === TRUE) {
-        echo "<p /><font color='red'>New user created successfully!</font><p />";
+        echo "<p /><font color='red'>New user created successfully!</font>";
+        header('Location: loginPage.php');
     } else {
         echo "Error: " . $newUser . "<br>" . $conn->error;
     } 
