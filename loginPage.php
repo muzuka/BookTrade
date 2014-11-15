@@ -37,12 +37,13 @@
                             <td><input type="submit" name="button" id="button" value="Submit" /></td>
                         </tr>
                     </table>
+                </form>
                     <p></p>
                     <div style="text-align: center">
                         not a member?
                        <a href="register.php" target="_self"> Create a Account</a>
                     </div>
-                </form>
+
                 </div>
             </section>
         </div>
