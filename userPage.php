@@ -8,8 +8,8 @@ and open the template in the editor.
 <?php
 session_start();
 //Check whether the session variable SESS_USER_ID is present or not
-if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) == '')) {
-header("location: loginPage.php");
+if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
+    header("location: loginPage.php");
 exit();
 }
 ?>
