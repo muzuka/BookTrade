@@ -13,6 +13,7 @@ and open the template in the editor.
     <body>
 <?php
 // MySQL Connection
+session_start();
 include 'dataConnect.php';
 
 $un = filter_input(INPUT_POST, 'username');
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newUser = "INSERT INTO User(Username, eMail, Pword) VALUES ('$un', '$em', '$pw');";
 
     if ($conn->query($newUser) === TRUE) {
-        echo "<p /><font color='red'>New user created successfully!</font>";
+        $_SESSION['sess_new'] = 1;
         header('Location: loginPage.php');
     } else {
         echo "Error: " . $newUser . "<br>" . $conn->error;
