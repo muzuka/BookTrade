@@ -59,9 +59,7 @@ and open the template in the editor.
             <div>
                 <h1>Inbox</h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
-                    <form align="left" method="link" action="WriteaMessage.php">
-                        <input type="submit" value="Send New Message" />
-                    </form>
+                    <p/>
                 </div>
                 <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
                     <body>
