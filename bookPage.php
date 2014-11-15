@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userpage.html"> [return to user page]</a> <a>[log out]</a>
+            <a href="userpage.php"> [return to user page]</a> <a>[log out]</a>
         </div>
     </head>
 
