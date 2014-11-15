@@ -27,12 +27,13 @@ else {
     for($i = 0; $i < $numOfRows; $i++) {
         $currentRow = mysqli_fetch_assoc($result);
         
+        $bID   = $currentRow["bID"];
         $title = $currentRow["Title"];
         $author = $currentRow["Author"];
         
-        echo "<a href='bookPage.php'>$title</a>";
+        echo "<a href='bookPage.php?id=$bID'>$title</a>";
         echo "<br />";
-        echo "<a href='bookPage.php'>$title</a>";
+        echo "<a href='bookPage.php?id=$bID'>$title</a>";
         echo "<br />";
     }
     
@@ -42,5 +43,7 @@ else {
 
     
 }
+
+mysqli_close($conn);
 
 ?>
