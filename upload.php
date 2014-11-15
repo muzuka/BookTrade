@@ -5,6 +5,14 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
+<?php
+    session_start();
+    //Check whether the session variable SESS_USER_ID is present or not
+    if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
+        header("location: loginPage.php");
+    exit();
+    }
+?>
     <head>
         <title>Upload</title>
         <meta charset="windows-1252">
@@ -12,7 +20,7 @@ and open the template in the editor.
     </head>
     <body>
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userpage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
         </div>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
             <h1>Upload</h1>
