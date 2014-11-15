@@ -21,7 +21,7 @@ $userData = mysql_fetch_array($result, MYSQL_ASSOC);
 if($pasword != $userData['Pword']) // Incorrect password. So, redirect to login_form again.
 {
 header('Location: loginForm.php');
-}else{ // Redirect to home page after successful login.
+}else{ // Redirect to user page after successful login.
 session_regenerate_id();
 $_SESSION['sess_user_id'] = $userData['UserID'];
 $_SESSION['sess_username'] = $userData['Username'];
