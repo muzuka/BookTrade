@@ -1,3 +1,11 @@
+<?php
+ 
+//Check whether the session variable SESS_MEMBER_ID is present or not
+if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) == '')) {
+header("location: login.html");
+exit();
+}
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -22,7 +30,7 @@ and open the template in the editor.
     </head>
     <body>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-          <h1> Username </h1>
+          <h1> <?php echo $_SESSION["sess_username"] ?> </h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
               <table>
                  <TD>
