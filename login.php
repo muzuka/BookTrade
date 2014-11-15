@@ -1,5 +1,5 @@
 <?php
-include 'dataconnect.php';
+include 'dataConnect.php';
 ob_start();
 session_start();
  
