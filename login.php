@@ -18,6 +18,8 @@ header('Location: loginPage.php');
  
 $userData = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
+
+
 if($password !== $userData['Pword']) // Incorrect password. So, redirect to login_form again.
 {
 header('Location: loginPage.php');
@@ -27,6 +29,7 @@ $_SESSION['sess_user_id'] = $userData['UserID'];
 $_SESSION['sess_username'] = $userData['Username'];
 $_SESSION['sess_email'] = $userData['eMail'];
 session_write_close();
+mysqli_close($conn);
 header('Location: userPage.php');
 exit();
 }

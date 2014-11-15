@@ -24,21 +24,33 @@
             <h1>Upload</h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                 <p></p>
-            </div>
-                <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
-                <div>
-                    <form style="text-align:center" method="post" action="newBook.php">
-                        <p><input type="text" name="Book Title" value="" placeholder="Title"></p>
-                        <p><input type="text" name="Author" value="" placeholder="Author"</p>
-                        <p><input type="text" name="Publisher" value="" placeholder="Publisher"></p>
-                        <p><input type="text" name="condition of book" value="" placeholder="condition"></p>
-                        <p><input type="file" name="picture of book" id="fileUploaded"></p>
-                        <p></p>
-                    </form>
-                        <form  style="text-align: center"method="link" action="uploaded.php">
-                            <p><input type="submit" value="submit" name="submit"></p>
-                        </form>
-                </div>
+        </div>
+            <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
+                <table align="Center">
+                <form id="new" method="post" action="newBook.php">
+                    <tr>
+                        <td>Title: </td><td><input type="text" name="title" value="" placeholder="Title" /></td>
+                    </tr>
+                    <tr>
+                        <td>Author: </td><td><input type="text" name="author" value="" placeholder="Author" /></td>
+                    </tr>
+                    <tr>
+                        <td>Quality: </td>
+                        <td><select name="quality" width="160px">
+                            <option value="pristine"> Pristine </option>
+                            <option value="good"> Good </option>
+                            <option value="used" selected> Used </option>
+                            <option value="worn"> Worn </option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Image: </td><td><input type="file" name="picture" id="picture" /></td>
+                    </tr>
+                    <tr align="Center">
+                        <td colspan="2"><p /><input type="submit" value="Upload" name="submit" /></td>
+                    </tr>
+                </form>
+                </table>
             </div>
         </div>
     </body>
