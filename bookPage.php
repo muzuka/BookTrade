@@ -4,6 +4,21 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+    
+    include "dataConnect.php";
+    
+    $bID = $_GET["id"];
+    
+    $query = "SELECT Title, Author FROM Book WHERE bID = '$bID'";
+    
+    $result = mysqli_query($conn, $query);
+    
+    $row = mysqli_fetch_assoc($result);
+    $title = $row["Title"];
+
+?>
+
 <html>
     <head>
         <title>The Book Lender</title>
@@ -17,7 +32,7 @@ and open the template in the editor.
     
     <body>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-            <h1> Book Title (i want this to be variable) </h1>
+            <h1> <?php echo "$title"; ?> </h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <p></p>
                 </div>
@@ -39,3 +54,5 @@ and open the template in the editor.
        </div>
     </body>
 </html>
+
+<?php mysqli_close($conn); ?>
