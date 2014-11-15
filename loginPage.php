@@ -38,6 +38,12 @@
                             <td>&nbsp;</td>
                             <td><input type="submit" name="button" id="button" value="Submit" /></td>
                         </tr>
+                        <tr>
+                            <td>not a member?</td>
+                        </tr>
+                        <tr>
+                            <td><a href="register.php" target="_self"> Create a Account</a></td>
+                        </tr>
                     </table>
                 </form>
                 </div>
