@@ -23,20 +23,25 @@
                     <h2>Login</h2>
                   </div>
                     
-                  <form style="text-align:center" method="post" action="userpage.php">
-                    <p><input type="text" name="login" value="" placeholder="Email"></p>
-                    <p><input type="password" name="password" value="" placeholder="Password"></p>
-                    <p class="remember_me">
-                      <label>
-                        <input type="checkbox" name="remember_me" id="remember_me">
-                        Remember me on this computer
-                      </label>
-                    </p>
-                    <p class="submit"><input type="submit" name="commit" value="Login"></p>
-                    <p> </p>
-                    Not a Member?
-                    <p> <a href="register.php" target="_self"> Create an Account</p>
-                  </form>
+                <form id="form1" name="form1" method="post" action="login.php">
+                    <table width="510" border="0" align="center">
+                        <tr>
+                            <td colspan="2">Login Form</td>
+                        </tr>
+                        <tr>
+                            <td>Username:</td>
+                            <td><input type="text" name="username" id="username" /></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input type="password" name="password" id="password" /></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><input type="submit" name="button" id="button" value="Submit" /></td>
+                        </tr>
+                    </table>
+                </form>
                 </div>
             </section>
         </div>
