@@ -2,7 +2,7 @@
  
 //Check whether the session variable SESS_MEMBER_ID is present or not
 if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) == '')) {
-header("location: login.php");
+header("location: loginPage.php");
 exit();
 }
 ?>
@@ -15,8 +15,6 @@ and open the template in the editor.
 <html>
     <head>
         <title>The Book Lender</title>
-        <meta charset="windows-1252">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             table, th, td 
             {
