@@ -20,9 +20,10 @@
             <section class="container">
                 <div class="login">
                   <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
-                  <h2>Login</h2>
+                    <h2>Login</h2>
                   </div>
-                  <form style="text-align:center" method="post" action="userpage.html">
+                    
+                  <form style="text-align:center" method="post" action="userpage.php">
                     <p><input type="text" name="login" value="" placeholder="Email"></p>
                     <p><input type="password" name="password" value="" placeholder="Password"></p>
                     <p class="remember_me">
