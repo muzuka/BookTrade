@@ -21,7 +21,7 @@ and open the template in the editor.
             }
         </style>
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userpage.html"> [return to user page]</a> <a>[log out]</a>
+            <a href="userpage.php"> [return to user page]</a> <a>[log out]</a>
         </div>
     </head>
     
@@ -40,7 +40,7 @@ and open the template in the editor.
             <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
                     <table>
                         <tr>
-                            <td><a href="WriteaMessage.html" target="_self">user who sent message (note: this is a link, it will go to a page that will display the message)</a></td>
+                            <td><a href="WriteaMessage.php" target="_self">user who sent message (note: this is a link, it will go to a page that will display the message)</a></td>
                         <td>date message was sent</td>
                         </tr>
                         <tr>
