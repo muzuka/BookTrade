@@ -15,14 +15,18 @@ and open the template in the editor.
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
             <div><h1></h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
-                    <p></p>
+                    <table>
+                       <tr>
+                           <td>reply</td><td>delete</td>
+                       </tr>
+                    </table>
                 </div>
                 <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
-                    <body>
-                        <table>
-                            <tr><td>reply</td><td>delete</td></tr>
-                        </table>
-                    </body>
+                    <table border="3px solid black" width="100%">
+                        <tr>
+                            <td> <a href="WriteaMessage.php" target="_self">user who sent message</a></td><td>date of message</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
          </div>
