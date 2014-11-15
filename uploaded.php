@@ -32,30 +32,32 @@ and open the template in the editor.
             <h2> Username </h2>
             
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
-              <table>
-                 <TD>
-                     <form method="link" action="upload.php">
-                        <input type="submit" value="Upload">
-                    </form>
-                 </TD>
-                 <td>
-                     <form method="link" action="remove.php">
-                         <input type="submit" value="Remove Books">
-                     </form>
-                 </td>
+            <table width="100%">
+                <tr>
+                    <td width="25%" align="center">
+                        <form method="link" action="upload.php">
+                           <input type="submit" value="Upload">
+                       </form>
+                    </td>
+                    <td width="25%" align="center">
+                        <form method="link" action="remove.php">
+                            <input type="submit" value="Remove Books">
+                        </form>
+                    </td>
 
-                 <TD>
-                     <form method="link" action="browse.php">
-                        <input type="submit" value="Browse">
-                     </form>
-                 </TD>
+                    <td width="25%" align="center">
+                        <form method="link" action="browse.php">
+                           <input type="submit" value="Browse">
+                        </form>
+                    </td>
 
-                 <TD>
-                     <form method="link" action="inbox.php">
-                         <input type="submit" value="messages">
-                      </form>
-                 </TD>
-              </table>
+                     <td width="25%" align="center">
+                        <form method="link" action="inbox.php">
+                            <input type="submit" value="messages">
+                         </form>
+                    </td>
+                </tr>
+            </table>
             </div>
             
           <table>
