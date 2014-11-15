@@ -19,12 +19,12 @@ and open the template in the editor.
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                 <p></p>
             </div>
-            <form style="text-align:center" method="post" action="index.php">
+            <form style="text-align:center" method="post" action="loginPage.php">
                 <p><input type="text" name="user" value="" placeholder="User Name"></p>
                 <p><input type="text" name="login" value="" placeholder="Email"></p>
                 <p><input type="password" name="password" value="" placeholder="Password"></p>
                 <p>confirm Password </p>
-                <p><input type="password" name="compare" value="" placeholder="password" method="link" action="loginPage.php"></p>
+                <p><input type="password" name="compare" value="" placeholder="password"></p>
                 <p class="submit"><input type="submit" name="commit" value="Submit"></p>
            </form>
         </div>
