@@ -59,7 +59,9 @@ and open the template in the editor.
             <div>
                 <h1>Inbox</h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
-                    <p></p>
+                    <form align="left" method="link" action="WriteaMessage.php">
+                        <input type="submit" value="Send New Message" />
+                    </form>
                 </div>
                 <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
                     <body>
@@ -86,15 +88,6 @@ and open the template in the editor.
                                 }
                             
                             ?>
-                            
-                            
-                            <!--<tr>
-                                <td><a href="WriteaMessage.php" target="_self">user who sent message (note: this is a link, it will go to a page that will display the message)</a></td>
-                            <td>date message was sent</td>
-                            </tr>
-                            <tr>
-                                <td> as many rows as messages.</td>
-                            </tr> -->
                         </table>
                     </body>
                 </div>
