@@ -23,7 +23,7 @@ if(isset($_SESSION['sess_new']) && ($_SESSION['sess_new']) == 1) {
 }
 ?>
     <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-        <h1 style="color: green"> The Book Lender </h1>
+        <h1 style="color: green"> The Book Lender | Login </h1>
         <section class="container">
             <div class="login">
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">

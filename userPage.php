@@ -14,7 +14,7 @@ exit();
 }
 ?>
     <head>
-        <title>The Book Lender</title>
+        <title> The Book Lender - User Home</title>
         <style>
             table, th, td 
             {
