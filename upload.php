@@ -44,7 +44,19 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <td>Image: </td><td><input type="file" name="picture" id="picture" /></td>
+                        <td>Description: </td><td><textarea wrap="physical" rows="5" cols="40" name="description" onfocus="if(this.value=='Describe your book here.'){this.value=''}; return false;">Describe your book here.</textarea> </td>
+                    </tr>
+                    <hr />
+                    <tr>
+                        <td>Image: </td>
+                        <td>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="167772154" />
+                            <input type="file" name="picture" id="picture" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Image Text*: </td>
+                        <td><input type="text" name="ptext" value="" placeholder="Image Description"</td>
                     </tr>
                     <tr align="Center">
                         <td colspan="2"><p /><input type="submit" value="Upload" name="submit" /></td>
