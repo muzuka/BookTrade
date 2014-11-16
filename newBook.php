@@ -27,7 +27,7 @@ if ($conn->query($newBook) === TRUE) {
 
 if(isset($description) && trim($description)!='')
 {
-    $desin = "INSERT INTO Description (bID, Description) VALUES '$nuid', '$description'";
+    $desin = "INSERT INTO Description (bID, Description) VALUES ('$nuid', '$description')";
     mysqli_query($conn, $desin);
 }
 
