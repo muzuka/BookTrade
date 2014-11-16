@@ -39,9 +39,14 @@ and open the template in the editor.
                         </tr>
                     </table>
                 </div>
+                <p>
+                <div> subject </div>
+                    <textarea name="subject" ROWS="1" cols="40"></textarea>
+                </p>
                 
                 <p>
-                    <textarea name="Message" ROWS="3" cols="9"> </textarea>
+                <div> Message </div>
+                    <textarea name="Message" ROWS="10" cols="40"></textarea>
                 </p>
                 <div> so i made a file sent page and a file not sent page i would like the send button to go to one or the other depending on if the user got the message.</div>
             </div>
