@@ -33,9 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 
 ?>
-        <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a>[log out]</a>
-        </div>
+
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
             <h1>Register</h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
