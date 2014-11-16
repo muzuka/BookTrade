@@ -4,6 +4,28 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
+<?php
+
+    include "dataConnect.php";
+    
+    $userID = $_GET["id"];
+    
+    $query  = "SELECT * FROM User WHERE UserID = '$userID';";
+    $result = mysqli_query($conn, $query);
+    
+    $firstRow = mysqli_fetch_assoc($result);
+    
+    if($result) {
+        $username = $firstRow["Username"];
+    }
+    else {
+        $username = "Missing User";
+    }
+
+
+?>
+
 <html>
     <head>
         <title>The Book Lender</title>
@@ -16,7 +38,7 @@ and open the template in the editor.
     
     <body>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-            <h1> Username </h1>
+            <h1> <?php echo $username . "'s profile"; ?> </h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                 <table> 
                      <TD>
@@ -27,16 +49,31 @@ and open the template in the editor.
                 </table>
             </div>
             <table style="column-count: 4; column-span: 300px;">
-                <tr>
-                    <td> 
-                        pictures of books offered.
-                        <p></p>
-                        <a href="bookpage.php" targe="_self"> book name</a>
-                    </td>
-                </tr>
-                <tr>
-                   <td> as many rows as needed</td><td>second</td>
-                </tr>
+                <?php     
+                    
+                    $bookQuery = "SELECT Title, Author, bID FROM Book, User WHERE UserID = '$userID'";
+                    $bookResult = mysqli_query($conn, $bookQuery);
+                
+                    for($i = 0; $i < mysqli_num_rows($bookResult); $i++) {
+                        echo "<tr>";
+                        
+                        $row = mysqli_fetch_assoc($bookResult);
+                        
+                        $title  = $row["Title"];
+                        $author = $row["Author"];
+                        $bID    = $row["bID"];
+                        
+                        echo "<a href='bookPage.php?id=$bID'>$title</a>";
+                        echo "<br/>";
+                        echo "<a href='bookPage.php?id=$bID'>$author</a>";
+                        echo "<br/>";
+                        
+                        
+                        echo "</tr><br/>";
+                    }
+                    
+                
+                ?>
             </table>
         </div>
     </body>
