@@ -17,7 +17,7 @@ and open the template in the editor.
     
     $bID = $_GET["id"];
     
-    $bookQuery = "SELECT * FROM Book WHERE bID = '$bID'";
+    $bookQuery = "SELECT * FROM Book, User WHERE bID = '$bID' AND oID = UserID;";
     $bookResult = mysqli_query($conn, $bookQuery);
     
     $row = mysqli_fetch_assoc($bookResult);
@@ -26,15 +26,19 @@ and open the template in the editor.
     $title   = $row["Title"];
     $author  = $row["Author"];
     $quality = $row["Quality"];
-    
-    $userQuery = "SELECT * FROM User WHERE UserID = '$owner';";
-    $userResult = mysqli_query($conn, $userQuery);
-    
-    $row = mysqli_fetch_assoc($userResult);
-    
     $username = $row["Username"];
     $email    = $row["eMail"];
-
+    
+    $descQuery = "SELECT Description FROM Description, Book WHERE Book.bID = Description.bID";
+    $descResult = mysqli_query($conn, $descQuery);
+    
+    if($descResult) {
+        $row = mysqli_fetch_assoc($descResult);
+        $description = $row["Description"];
+    }
+    else {
+        $description = "";
+    }
 ?>
 
 <html>
@@ -43,7 +47,7 @@ and open the template in the editor.
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userpage.php"> [return to user page]</a> <a >[log out]</a>
+            <a href="userPage.php"> [return to user page]</a> <a >[log out]</a>
         </div>
     </head>
 
@@ -79,6 +83,10 @@ and open the template in the editor.
                 <tr>
                     <td>Condition:</td>
                     <td><?php echo $quality; ?></td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td><?php echo $description; ?></td>
                 </tr>
             </table>
        </div>
