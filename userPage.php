@@ -21,6 +21,9 @@ exit();
                 border-collapse: collapse;
             }
         </style>
+        <div style=" text-align: right; text-decoration-color: blue">
+            <a href="logout.php">[log out]</a>
+        </div>
     </head>
     <body>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
