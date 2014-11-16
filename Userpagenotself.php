@@ -68,7 +68,6 @@ and open the template in the editor.
                         echo "<a href='bookPage.php?id=$bID'>$author</a>";
                         echo "<br/>";
                         
-                        
                         echo "</tr><br/>";
                     }
                     
