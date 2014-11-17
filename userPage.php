@@ -6,12 +6,15 @@ and open the template in the editor.
 -->
 <html>
 <?php
-session_start();
-//Check whether the session variable SESS_USER_ID is present or not
-if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
-    header("location: loginPage.php");
-exit();
-}
+
+    include "dataConnect.php";
+
+    session_start();
+    //Check whether the session variable SESS_USER_ID is present or not
+    if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
+        header("location: loginPage.php");
+        exit();
+    }
 ?>
     <head>
         <title> The Book Lender - User Home</title>
@@ -56,13 +59,37 @@ exit();
                 </tr>
               </table>
             </div>
+          <p style="font-size: 25px">Your Books</p>
           <table>
-              <tr>
-                  <td> <a href="bookPage.php" target="_self">book jpeg </a></td>
-              </tr>
-              <tr>
-                  <td> <a href="bookPage.php" target="_self">book title </a></td>
-              </tr>
+              <?php
+              
+                $userID = $_SESSION['sess_user_id'];
+              
+                $query = "SELECT bID, Title, Author FROM Book WHERE oID = '$userID'";
+                $result = mysqli_query($conn, $query);
+              
+                if(!$result) {
+                    echo "<tr> You have no books. </tr>";
+                }
+                
+                for($i = 0; $i < mysqli_num_rows($result); $i++) {
+                   
+                    $row = mysqli_fetch_assoc($result);
+                    
+                    $bID    = $row["bID"];
+                    $title  = $row["Title"];
+                    $author = $row["Author"];
+                    
+                    echo "<tr>";
+                
+                    echo "<a href='bookPage.php?id=$bID'>$title</a>";
+                    echo "<br/>";
+                    echo "<a href='bookPage.php?id=$bID'>$author</a>";
+                    echo "<br/>";
+                
+                    echo "</tr><br/>";
+                }
+              ?>
           </table>
         </div>
     </body>
