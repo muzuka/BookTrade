@@ -4,6 +4,16 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php 
+    session_start();
+    //Check whether the session variable SESS_USER_ID is present or not
+    if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
+        header("location: loginPage.php");
+    exit();
+    }
+    
+    
+?>
 <html>
     <head>
         <title>compose</title>
