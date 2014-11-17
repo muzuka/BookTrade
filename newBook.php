@@ -20,7 +20,7 @@ $nuid = $row['UUID()'];
 
 $newBook = "INSERT INTO Book (bID, Title, Author, Quality, oID) VALUES ('$nuid', '$title', '$author', '$quality', '$oid');";
 if ($conn->query($newBook) === TRUE) {
-    header('Location: userPage.php');
+    $completion = "Book";
 } else {
     echo "Error: " . $newBook . "<br>" . $conn->error;
 } 
@@ -29,26 +29,20 @@ if(isset($description) && trim($description)!='')
 {
     $desin = "INSERT INTO Description (bID, Description) VALUES ('$nuid', '$description')";
     mysqli_query($conn, $desin);
+    $completion = $completion + ", Description";
 }
 
 // DO NOT UPLOAD AN IMAGE YET - It doesn't work
-if(isset($_FILES['picture']) && trim(isset($_POST['ptext'])))
+if(isset($_FILES['picture']) && $_FILES['picure']['size']>0 && isset($_POST['ptext']) && trim($_POST['ptext'])!='')
 {
-    try
-    {
-        if(is_uploaded_file($_FILES['picture'] && getimagesize($_FILES['picture']) != FALSE))
-        {
-            $size = getimagesize($_FILES['picture']);
-            $image = fopen($_FILES['picture'], "r");
-            $ptxt = $_POST['ptext'];
-            $maxsize = 16777215;
-            if($image < $maxsize)
-            {
-                $pins = "INSERT INTO Picture (bID, pText, Picture) VALUES '$nuid', '$ptxt', '$image';";
-                mysqli_query($conn, $pins);
-            }     
-        }
-    } catch (Exception $ex) {
-        echo '<h4>'.$ex->getMessage().'</h4>';
-    }
+    $tmpName = $_FILES['picture']['tmp_name'];
+    
+    $ptxt = $_POST['ptext'];
+    $fp = fopen($tmpName, 'r');
+    $data = fread($fp, filesize($tmpName));
+    $data = addslashes($data);
+    $fclose($fp);
+    
+    $imgin = "INSERT INTO Picture (bID, pText, Picture) VALUES ('$nuid', '$ptxt', '$data')";
+    mysqli_query($conn, $imgin);  
 }

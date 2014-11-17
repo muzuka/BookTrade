@@ -51,11 +51,11 @@
                         <td>Image: </td>
                         <td>
                             <input type="hidden" name="MAX_FILE_SIZE" value="167772154" />
-                            <input type="file" name="picture" id="picture" />
+                            <input type="file" accept="image/jpeg" name="picture" id="picture" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Image Text*: </td>
+                        <td>Image Text: </td>
                         <td><input type="text" name="ptext" value="" placeholder="Image Description"</td>
                     </tr>
                     <tr align="Center">
