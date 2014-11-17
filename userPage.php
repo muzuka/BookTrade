@@ -30,7 +30,7 @@ and open the template in the editor.
     </head>
     <body>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-          <h1> <?php echo $_SESSION["sess_username"] ?> </h1>
+          <h1> <?php echo $_SESSION["sess_username"] . "'s Profile"; ?> </h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                 <table width="100%">
                 <tr>
