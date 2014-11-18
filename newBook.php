@@ -33,7 +33,7 @@ if(isset($description) && trim($description)!='')
 }
 
 // DO NOT UPLOAD AN IMAGE YET - It doesn't work
-if(isset($_FILES['picture']) && $_FILES['picure']['size']>0)// && isset($_POST['ptext']) && trim($_POST['ptext'])!='')
+if(isset($_FILES['picture']) && $_FILES['picture']['size'] > 0)// && isset($_POST['ptext']) && trim($_POST['ptext'])!='')
 {
     $tmpName = $_FILES['picture']['tmp_name'];
     
@@ -41,8 +41,8 @@ if(isset($_FILES['picture']) && $_FILES['picure']['size']>0)// && isset($_POST['
     $fp = fopen($tmpName, 'r');
     $data = fread($fp, filesize($tmpName));
     $data = addslashes($data);
-    $fclose($fp);
-    echo "Here we go, making a query";
+    fclose($fp);
+    
     $imgin = "INSERT INTO Picture (bID, pText, Picture) VALUES ('$nuid', '$ptxt', '$data');";
     if($conn->query($imgin) === TRUE) {
         $completion = $completion . ", Picture";
