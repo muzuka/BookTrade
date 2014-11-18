@@ -4,6 +4,26 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+
+    include "dataConnect.php";
+    
+    session_start();
+    //Check whether the session variable SESS_USER_ID is present or not
+    if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
+        header("location: loginPage.php");
+        exit();
+    }
+    
+    $username = $_SESSION['sess_user_id'];
+    
+    $userBookQuery = "SELECT Title, Author FROM Book WHERE oID = '$username';";
+    $result = mysqli_query($conn, $userBookQuery);
+    
+    $numOfRows =  mysqli_num_rows($result);
+
+?>
+
 <html>
     <head>
         <title>The Book Lender</title>
@@ -32,12 +52,32 @@ and open the template in the editor.
               </table>
             </div>
           <table>
-              <tr>
-                  <td> <a href="bookPage.php" target="_self">book jpeg </a></td>
-              </tr>
-              <tr>
-                  <td> <a href="bookPage.php" target="_self">book title </a></td>
-              </tr>
+                <?php
+              
+                    if($numOfRows == 0) {
+                        echo "<tr> You have no books. </tr>";
+                    }
+                    else {
+                        
+                        $userID = $_SESSION['sess_user_id'];
+
+                        for($i = 0; $i < $numOfRows; $i++) {
+
+                            $row = mysqli_fetch_assoc($result);
+                            $title  = $row["Title"];
+                            $author = $row["Author"];
+
+                            echo '<tr>';
+
+                            echo "<p>$title</p>";
+                            echo "<p>$author</p>";
+                            echo "<br/>";
+
+                            echo "</tr><br/>";
+                        }
+                    }
+              
+                ?>
           </table>
           <div> what i want here is to be able to highlight the books and then hit the delet button to remove them.</div>
         </div>
