@@ -18,7 +18,7 @@ and open the template in the editor.
     
     $userID = $_SESSION['sess_user_id'];
     
-    $query = "SELECT Subject, TStamp, Viewed FROM Messages WHERE rID = $userID";
+    $query = "SELECT Subject, TStamp, Viewed FROM Messages WHERE rID = '$userID'";
     
     $result = mysqli_query($conn, $query);
     
@@ -48,7 +48,7 @@ and open the template in the editor.
             }
         </style>
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userpage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
         </div>
     </head>
 
