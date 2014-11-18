@@ -9,7 +9,11 @@ and open the template in the editor.
 
     include "dataConnect.php";
     
-    $userID = $_GET["id"];
+    session_start();
+    
+    $_SESSION["pageUser"] = $_GET["id"];
+    
+    $userID = $_SESSION["pageUser"];
     
     $query  = "SELECT * FROM User WHERE UserID = '$userID';";
     $result = mysqli_query($conn, $query);
@@ -32,7 +36,7 @@ and open the template in the editor.
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userpage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
         </div>
     </head>
     
@@ -42,8 +46,8 @@ and open the template in the editor.
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                 <table> 
                      <TD>
-                         <form method="link" action="WriteaMessage.php">
-                            <input type="submit" value=" send message">
+                        <form method="GET" action="WriteaMessage.php">
+                            <input type="submit" value="send message">
                         </form>
                      </TD>
                 </table>

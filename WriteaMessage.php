@@ -12,6 +12,7 @@ and open the template in the editor.
     exit();
     }
     
+    $recID = $_SESSION["pageUser"];
     
 ?>
 <html>
@@ -20,7 +21,7 @@ and open the template in the editor.
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userpage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
         </div>
     </head>
     
@@ -31,34 +32,29 @@ and open the template in the editor.
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <p></p>
                 </div>
-                
+            <form method="POST" action="send.php">
                 <div>
                     <table>
                         <tr>
                             <td>
-                                <form method="link" action="sent.php">
-                                <input type="submit" value="Send" name="send">
-                                </form>
+                                <input type='submit' value="send" name="submit">
                             </td>
                             <td>
-                                <form method="link" action="inbox.php">
-                                    <input type="submit" value="Delete">
-                                </form>
+                                <input type="submit" value="delete" name="submit">
                             </td>
                             <td><input type="file" name="attach" id="fileUploaded"></td>
                         </tr>
                     </table>
                 </div>
                 <p>
-                <div> subject </div>
+                    <div> Subject </div>
                     <textarea name="subject" ROWS="1" cols="40"></textarea>
                 </p>
                 
                 <p>
-                <div> Message </div>
-                    <textarea name="Message" ROWS="10" cols="40"></textarea>
+                    <div> Message </div>
+                    <textarea name="message" ROWS="10" cols="40"></textarea>
                 </p>
-                <div> so i made a file sent page and a file not sent page i would like the send button to go to one or the other depending on if the user got the message.</div>
-            </div>
+            </form>
     </body>
 </html>
