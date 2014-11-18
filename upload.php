@@ -27,7 +27,7 @@
         </div>
             <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
                 <table align="Center">
-                <form id="new" method="post" action="newBook.php">
+                <form enctype="multipart/form-data" id="new" method="post" action="newBook.php">
                     <tr>
                         <td>Title: </td><td><input type="text" name="title" value="" placeholder="Title" /></td>
                     </tr>

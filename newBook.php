@@ -33,9 +33,8 @@ if(isset($description) && trim($description)!='')
 }
 
 // DO NOT UPLOAD AN IMAGE YET - It doesn't work
-if(isset($_FILES['picture']) && $_FILES['picure']['size']>0 && isset($_POST['ptext']) && trim($_POST['ptext'])!='')
+if(isset($_FILES['picture']) && $_FILES['picure']['size']>0)// && isset($_POST['ptext']) && trim($_POST['ptext'])!='')
 {
-    echo "Now you're in the image part";
     $tmpName = $_FILES['picture']['tmp_name'];
     
     $ptxt = $_POST['ptext'];
@@ -53,4 +52,5 @@ if(isset($_FILES['picture']) && $_FILES['picure']['size']>0 && isset($_POST['pte
 //    mysqli_query($conn, $imgin);  
 }
 echo $completion . " have been inserted successfully!";
+mysqli_close($conn);
 //header("location: userPage.php");
