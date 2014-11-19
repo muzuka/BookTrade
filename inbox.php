@@ -83,12 +83,13 @@ and open the template in the editor.
                                     
                                     $sender    = $senderName["Username"];
                                     $timeStamp = $row["TStamp"];
-                                    $subject = $row["Subject"];
-                                    $viewed = $row["Viewed"];
+                                    $subject   = $row["Subject"];
+                                    $viewed    = $row["Viewed"];
                                     
                                     echo "<tr><br/>";
                                     echo "<td> $sender </td>";
-                                    echo "<td> $subject </td>";
+                                    echo "<td>";
+                                    echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'> $subject </a></td>";
                                     echo "<td> $timeStamp</td>";
                                     echo "</tr>";
                                 }
