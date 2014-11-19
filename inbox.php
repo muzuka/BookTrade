@@ -18,12 +18,12 @@ and open the template in the editor.
     
     $userID = $_SESSION['sess_user_id'];
     
-    $query = "SELECT Subject, TStamp, Viewed FROM Messages WHERE rID = '$userID'";
+    $messageQuery = "SELECT Subject, TStamp, Viewed, sID FROM Messages WHERE rID = '$userID'";
     
-    $result = mysqli_query($conn, $query);
+    $messageResult = mysqli_query($conn, $messageQuery);
     
-    if($result) {
-        $numOfMessages = mysqli_num_rows($result);
+    if($messageResult) {
+        $numOfMessages = mysqli_num_rows($messageResult);
     }
     else {
         $numOfMessages = 0;
@@ -33,7 +33,7 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>TInbox</title>
+        <title>inbox</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -44,7 +44,7 @@ and open the template in the editor.
             }
             th, td
             {
-                padding-right:  400px
+                padding-right:  300px
             }
         </style>
         <div style=" text-align: right; text-decoration-color: blue">
@@ -64,7 +64,6 @@ and open the template in the editor.
                 <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
                     <body>
                         <table>
-                            
                             <?php
                             
                                 if($numOfMessages == 0) {
@@ -73,13 +72,22 @@ and open the template in the editor.
                             
                                 for($i = 0; $i < $numOfMessages; $i++) {
                                     
-                                    $row = mysqli_fetch_assoc($result);
+                                    $row = mysqli_fetch_assoc($messageResult);
                                     
+                                    $senderID = $row["sID"];
+                                    
+                                    $senderQuery = "SELECT Username FROM User WHERE UserID = '$senderID';";
+                                    $senderResult = mysqli_query($conn, $senderQuery);
+                                    
+                                    $senderName = mysqli_fetch_assoc($senderResult);
+                                    
+                                    $sender    = $senderName["Username"];
                                     $timeStamp = $row["TStamp"];
                                     $subject = $row["Subject"];
                                     $viewed = $row["Viewed"];
                                     
                                     echo "<tr><br/>";
+                                    echo "<td> $sender </td>";
                                     echo "<td> $subject </td>";
                                     echo "<td> $timeStamp</td>";
                                     echo "</tr>";
