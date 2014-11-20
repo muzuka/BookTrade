@@ -28,7 +28,7 @@ and open the template in the editor.
 
     <body>
          <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-            <h1></h1>
+            <h1>Compose Message</h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <p></p>
                 </div>
