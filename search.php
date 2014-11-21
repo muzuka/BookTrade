@@ -10,7 +10,7 @@ $search_term = $_POST["search"];
 $search_term = mysqli_escape_string($conn, $search_term);
 
 // query database
-$query = "SELECT bID, Author, Title, UserID, Username FROM Book, User WHERE (Author LIKE '%$search_term%' OR Title LIKE '%$search_term%') AND oID = UserID;";
+$query = "SELECT bID, Author, Title, UserID, Username FROM Book INNER JOIN User WHERE (Author LIKE '%$search_term%' OR Title LIKE '%$search_term%') AND oID = UserID;";
 
 // get result
 $result = mysqli_query($conn, $query);

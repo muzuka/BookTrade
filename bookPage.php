@@ -17,7 +17,7 @@ and open the template in the editor.
     
     $bID = $_GET["id"];
     
-    $bookQuery = "SELECT * FROM Book, User WHERE bID = '$bID' AND oID = UserID;";
+    $bookQuery = "SELECT * FROM Book INNER JOIN User WHERE bID = '$bID' AND oID = UserID;";
     $bookResult = mysqli_query($conn, $bookQuery);
     
     $row = mysqli_fetch_assoc($bookResult);
@@ -30,7 +30,7 @@ and open the template in the editor.
     $username = $row["Username"];
     $email    = $row["eMail"];
     
-    $descQuery = "SELECT Description FROM Description, Book WHERE '$bookID' = Description.bID";
+    $descQuery = "SELECT Description FROM Description INNER JOIN Book WHERE '$bookID' = Description.bID";
     $descResult = mysqli_query($conn, $descQuery);
     
     if($descResult) {

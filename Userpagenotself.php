@@ -55,7 +55,7 @@ and open the template in the editor.
             <table style="column-count: 4; column-span: 300px;">
                 <?php     
                     
-                    $bookQuery = "SELECT Title, Author, bID FROM Book, User WHERE UserID = '$userID' AND oID = '$userID';";
+                    $bookQuery = "SELECT Title, Author, bID FROM Book INNER JOIN User WHERE UserID = '$userID' AND oID = '$userID';";
                     $bookResult = mysqli_query($conn, $bookQuery);
                 
                     for($i = 0; $i < mysqli_num_rows($bookResult); $i++) {

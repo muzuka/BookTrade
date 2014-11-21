@@ -79,7 +79,6 @@ and open the template in the editor.
               
                 ?>
           </table>
-          <div> what i want here is to be able to highlight the books and then hit the delet button to remove them.</div>
         </div>
     </body>
 </html>
