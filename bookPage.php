@@ -22,6 +22,7 @@ and open the template in the editor.
     
     $row = mysqli_fetch_assoc($bookResult);
     
+    $bookID  = $row["bID"];
     $owner   = $row["oID"];
     $title   = $row["Title"];
     $author  = $row["Author"];
@@ -29,7 +30,7 @@ and open the template in the editor.
     $username = $row["Username"];
     $email    = $row["eMail"];
     
-    $descQuery = "SELECT Description FROM Description, Book WHERE Book.bID = Description.bID";
+    $descQuery = "SELECT Description FROM Description, Book WHERE '$bookID' = Description.bID";
     $descResult = mysqli_query($conn, $descQuery);
     
     if($descResult) {
@@ -47,7 +48,7 @@ and open the template in the editor.
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userpage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
         </div>
     </head>
 
