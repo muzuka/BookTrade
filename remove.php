@@ -15,9 +15,9 @@ and open the template in the editor.
         exit();
     }
     
-    $username = $_SESSION['sess_user_id'];
+    $userID = $_SESSION['sess_user_id'];
     
-    $userBookQuery = "SELECT Title, Author FROM Book WHERE oID = '$username';";
+    $userBookQuery = "SELECT Title, Author, bID FROM Book WHERE oID = '$userID';";
     $result = mysqli_query($conn, $userBookQuery);
     
     $numOfRows =  mysqli_num_rows($result);
@@ -35,19 +35,16 @@ and open the template in the editor.
     </head>
     
     <body>
+        <form method="POST" action="removeScript.php">
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
           <h1> Remove books </h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
               <table>
                  <TD>
-                     <form method="link" action="removed.php">
-                        <input type="submit" value="delete">
-                    </form>
+                        <input type="submit" name="remove" value="delete">
                  </TD>
                  <td>
-                     <form method="link" action="userpage.php">
-                         <input type="submit" value="cancel">
-                     </form>
+                         <input type="submit" name="remove" value="cancel">
                  </td>
               </table>
             </div>
@@ -66,19 +63,27 @@ and open the template in the editor.
                             $row = mysqli_fetch_assoc($result);
                             $title  = $row["Title"];
                             $author = $row["Author"];
+                            $bookID = $row["bID"];
 
                             echo '<tr>';
 
-                            echo "<p>$title</p>";
-                            echo "<p>$author</p>";
-                            echo "<br/>";
+                            echo "<td>";
+                            echo "<input type='checkbox' name='toRemove[]' value='$bookID' />";
+                            echo "</td>";
+                            
+                            echo "<td>";
+                            echo "<p>$title<br/>$author</p>";
+                            echo "</td>";
 
                             echo "</tr><br/>";
                         }
                     }
+                    
+                    mysqli_close($conn);
               
                 ?>
           </table>
         </div>
+        </form>  
     </body>
 </html>
