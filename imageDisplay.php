@@ -7,7 +7,7 @@
  */
 
 include 'dataConnect.php';
-
+session_start();
 $bID = $_GET['bid'];
 
 if (!isset($bID) || empty($bID))
@@ -16,12 +16,13 @@ if (!isset($bID) || empty($bID))
 }
 else
 {
-    $pictureQuerty = "SELECT Picture FROM Picture WHERE bID = '$bID';";
+    $pictureQuery = "SELECT Picture FROM Picture WHERE bID = '" . $bID . "';";
     $picResult = mysqli_query($conn, $pictureQuery);
     $picRow = mysqli_fetch_assoc($picResult);
     $picture = $picRow['Picture'];
 
-    header('Content-type: image/jpeg');
+    header('content-type: image/jpg');
+    header('content-length: ' . strlen($picture));
         echo $picture;
 }
    
