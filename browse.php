@@ -21,10 +21,15 @@ and open the template in the editor.
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <p> </p>
                 </div>
-                <form method="post" action="browse2.php">
+                <form method="post" action="browse.php">
                     <p><input type="search" name="search" placeholder="search">
                     <input type="submit" value="submit" name="Search"></p>
                 </form>
+                <?php
+                    if(isset($_POST["search"])) {
+                        include "search.php";
+                    }
+                ?>
             </div>
         </div>
     </body>
