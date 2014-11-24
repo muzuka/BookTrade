@@ -56,6 +56,9 @@ and open the template in the editor.
                             <input type="submit" value="messages">
                          </form>
                     </td>
+                    <td>
+                        rating
+                    </td>
                 </tr>
               </table>
             </div>

@@ -50,6 +50,21 @@ and open the template in the editor.
                             <input type="submit" value="send message">
                         </form>
                      </TD>
+                     <td>
+                         <select>
+                             <option> rate this user?</option>
+                             <option value="one"> 1 </option>
+                             <option value="two"> 2 </option>
+                             <option value="three"> 3 </option>
+                             <option value="four"> 4 </option>
+                             <option value="five"> 5 </option>
+                             <option value="six"> 6 </option>
+                             <option value="seven"> 7 </option>
+                             <option value="eight"> 8 </option>
+                             <option value="nine"> 9 </option>
+                             <option value="ten"> 10 </option>
+                         </select>
+                     </td>
                 </table>
             </div>
             <table style="column-count: 4; column-span: 300px;">
