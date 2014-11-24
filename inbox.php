@@ -33,7 +33,7 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>inbox</title>
+        <title>Inbox</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>

@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>available books</title>
+        <title>The Book Lender | Available Books</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
