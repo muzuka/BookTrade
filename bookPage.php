@@ -49,6 +49,10 @@ and open the template in the editor.
         $imgRow = mysqli_fetch_assoc($imageResult);
         $pTxt = $imgRow['pText'];
     }
+    else
+    {
+        $pTxt = "";
+    }
     
 ?>
 
@@ -70,7 +74,7 @@ and open the template in the editor.
                     <p></p>
                 </div>
             <div style="background-color: white; color:black; margin:10px; padding: 10px">
-                <a href="imageDisplay.php"><?php echo $pTxt ?></a>
+                <a href="imageDisplay.php?bid=$bookID"><?php echo $pTxt ?></a>
             </div>  
             <p></p>
             <div>Book information</div>
