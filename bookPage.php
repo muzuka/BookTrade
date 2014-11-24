@@ -40,6 +40,16 @@ and open the template in the editor.
     else {
         $description = "";
     }
+    
+    $imageQuery = "SELECT bID, pText FROM Picture WHERE bID='$bID'";
+    $imageResult = mysqli_query($conn, $imageQuery);
+    
+    if($imageResult)
+    {
+        $imgRow = mysqli_fetch_assoc($imageResult);
+        $pTxt = $imgRow['pText'];
+    }
+    
 ?>
 
 <html>
@@ -59,8 +69,8 @@ and open the template in the editor.
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <p></p>
                 </div>
-            <div style="background-color: white; color:black; margin:150px; padding: 100px">
-                this will be the jpeg
+            <div style="background-color: white; color:black; margin:10px; padding: 10px">
+                <a href="imageDisplay.php"><?php echo $pTxt ?></a>
             </div>  
             <p></p>
             <div>Book information</div>
