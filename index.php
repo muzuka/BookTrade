@@ -74,7 +74,9 @@ and open the template in the editor.
             <div>
                 <h1>Welcome to the Book Lender </h1>
                 <div id="bar">
-                    <p> </p>
+                    <form method="link" action="browse.php" align="left">
+                        <input type="submit" name="submit" value="browse"/>
+                    </form>
                 </div>
                 <div id="login">
                     <h2 align="center"> Log in </h2>

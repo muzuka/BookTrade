@@ -4,13 +4,30 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+
+    session_start();
+    //Check whether the session variable SESS_USER_ID is present or not
+    if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
+        $loggedin = FALSE;
+    }
+    else {
+        $loggedin = TRUE;
+    }
+
+?>
+
 <html>
     <head>
         <title>The Book Lender | Available Books</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <?php
+                if($loggedin) {
+                    echo "<a href='userPage.php'> [return to user page]</a> <a href='logout.php'>[log out]</a>";
+                }
+            ?>
         </div>
     </head>
     
