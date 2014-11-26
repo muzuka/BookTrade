@@ -51,22 +51,27 @@ and open the template in the editor.
                         </form>
                      </TD>
                      <td>
-                         <form method="GET" action="rateMe.php?eid=<?php echo $userID?>">
+                         <?php
+                         if (isset($_SESSION["sess_user_id"]))
+                         {
+                         echo "<form method='GET' action='rateMe.php?eid=$userID'>
                          <select>
                              <option>Rate This User?</option>
-                             <option value="1"> 1 </option>
-                             <option value="2"> 2 </option>
-                             <option value="3"> 3 </option>
-                             <option value="4"> 4 </option>
-                             <option value="5"> 5 </option>
-                             <option value="6"> 6 </option>
-                             <option value="7"> 7 </option>
-                             <option value="8"> 8 </option>
-                             <option value="9"> 9 </option>
-                             <option value="10"> 10 </option>
+                             <option value='1'> 1 </option>
+                             <option value='2'> 2 </option>
+                             <option value='3'> 3 </option>
+                             <option value='4'> 4 </option>
+                             <option value='5'> 5 </option>
+                             <option value='6'> 6 </option>
+                             <option value='7'> 7 </option>
+                             <option value='8'> 8 </option>
+                             <option value='9'> 9 </option>
+                             <option value='10'> 10 </option>
                          </select>
-                             <input type="submit" value="Rate User" />
-                         </form>
+                             <input type='submit' value='Rate User' />
+                         </form>";
+                        }
+                     ?>
                      </td>
                 </table>
             </div>
