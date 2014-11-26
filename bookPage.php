@@ -9,8 +9,10 @@ and open the template in the editor.
     session_start();
     //Check whether the session variable SESS_USER_ID is present or not
     if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
-        header("location: loginPage.php");
-        exit();
+        $loggedin = FALSE;
+    }
+    else {
+        $loggedin = TRUE;
     }
     
     include "dataConnect.php";
@@ -61,9 +63,11 @@ and open the template in the editor.
         <title>The Book Lender | Book</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
-        </div>
+        <?php
+            if($loggedin) {
+                echo "<div style='text-align: right; text-decoration-color: blue'> <a href='userPage.php'> [return to user page]</a> <a href='logout.php'>[log out]</a> </div>";
+            }
+        ?>
     </head>
 
     

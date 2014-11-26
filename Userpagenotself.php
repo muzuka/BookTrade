@@ -46,9 +46,6 @@ and open the template in the editor.
                 echo "<div style='text-align: right; text-decoration-color: blue'> <a href='userPage.php'> [return to user page]</a> <a href='logout.php'>[log out]</a> </div>";
             }
         ?>
-        <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
-        </div>
     </head>
     
     <body>
