@@ -46,7 +46,7 @@
                     <tr>
                         <td>Description: </td><td><textarea wrap="physical" rows="5" cols="40" name="description" onfocus="if(this.value=='Describe your book here.'){this.value=''}; return false;">Describe your book here.</textarea> </td>
                     </tr>
-                    <hr />http://localhost/project/BookTrade/imageDisplay.php?bid=a9e5b1f0-741f-11e4-9a3c-74f06d7aba9f
+                    <!--<hr />http://localhost/project/BookTrade/imageDisplay.php?bid=a9e5b1f0-741f-11e4-9a3c-74f06d7aba9f -->
                     <tr>
                         <td>Image: </td>
                         <td>
