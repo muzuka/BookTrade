@@ -53,4 +53,4 @@ if(isset($_FILES['picture']) && $_FILES['picture']['size'] > 0)// && isset($_POS
 }
 echo $completion . " have been inserted successfully!";
 mysqli_close($conn);
-//header("location: userPage.php");
+header("location: userPage.php");
