@@ -42,7 +42,6 @@ and open the template in the editor.
                             <td>
                                 <input type="submit" value="delete" name="submit">
                             </td>
-                            <td><input type="file" name="attach" id="fileUploaded"></td>
                         </tr>
                     </table>
                 </div>
