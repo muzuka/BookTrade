@@ -16,10 +16,12 @@ if($_POST["submit"] == "delete") {
     header("Location: inbox.php");
 }
 else {
-    $recID = $_SESSION["pageUser"];
+    $recID = $_POST["recID"];
     $sendID = $_SESSION["sess_user_id"];
     
     $date = date("Y-m-d h:i:s");
+    $message = str_replace("'", "''", $message);
+    $subject = str_replace("'", "''", $subject);
     
     $query = "INSERT INTO Messages(mBody, rID, sID, Subject, TStamp, Viewed) VALUES ('$message', '$recID', '$sendID', '$subject', '$date', 0);";
     $result = mysqli_query($conn, $query);

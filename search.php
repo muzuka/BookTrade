@@ -36,11 +36,11 @@ else {
         $userID = $currentRow["UserID"];
         
         
-        echo "<a href='Userpagenotself.php?id=$userID'>$username</a>";
+        echo "Trader: <a href='Userpagenotself.php?id=$userID'>$username</a>";
         echo "<br/>";
-        echo "<a href='bookPage.php?id=$bID'>$title</a>";
+        echo "Title: <a href='bookPage.php?id=$bID'>$title</a>";
         echo "<br/>";
-        echo "<a href='bookPage.php?id=$bID'>$author</a>";
+        echo "Author: <a href='bookPage.php?id=$bID'>$author</a>";
         echo "<br/>";
         echo "</tr>";
         echo"<br/>";

@@ -18,7 +18,7 @@ and open the template in the editor.
     
     $userID = $_SESSION['sess_user_id'];
     
-    $messageQuery = "SELECT Subject, TStamp, Viewed, sID FROM Messages WHERE rID = '$userID'";
+    $messageQuery = "SELECT Subject, TStamp, Viewed, sID FROM Messages WHERE rID = '$userID' ORDER BY TStamp DESC";
     
     $messageResult = mysqli_query($conn, $messageQuery);
     
@@ -48,7 +48,7 @@ and open the template in the editor.
             }
         </style>
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [Return to User Page]</a> <a href="logout.php">[Logout]</a>
         </div>
     </head>
 
@@ -85,13 +85,24 @@ and open the template in the editor.
                                     $timeStamp = $row["TStamp"];
                                     $subject   = $row["Subject"];
                                     $viewed    = $row["Viewed"];
-                                    
-                                    echo "<tr><br/>";
-                                    echo "<td> $sender </td>";
-                                    echo "<td>";
-                                    echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'> $subject </a></td>";
-                                    echo "<td> $timeStamp</td>";
-                                    echo "</tr>";
+                                    if ($row['Viewed'] == 0)
+                                    {
+                                        echo "<tr><br/>";
+                                        echo "<td><a href='Userpagenotself.php?id=$senderID'><b> $sender </b></a></td>";
+                                        echo "<td>";
+                                        echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'><b> $subject </b></a></td>";
+                                        echo "<td><b> $timeStamp </b></td>";
+                                        echo "</tr>";
+                                    }
+                                    else
+                                    {
+                                        echo "<tr><br/>";
+                                        echo "<td><a href='Userpagenotself.php?id=$senderID'> $sender </a></td>";
+                                        echo "<td>";
+                                        echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'> $subject </a></td>";
+                                        echo "<td> $timeStamp</td>";
+                                        echo "</tr>";  
+                                    }
                                 }
                             
                             ?>

@@ -15,6 +15,15 @@ and open the template in the editor.
         header("location: loginPage.php");
         exit();
     }
+    else
+    {
+        $currID = $_SESSION['sess_user_id'];
+    }
+    
+    $ratingQuery = "SELECT AVG(Rating) FROM Feedback WHERE rID='$currID'";
+    $getRating = mysqli_query($conn, $ratingQuery);
+    $fetchRating = mysqli_fetch_array($getRating);
+    $avgRating = $fetchRating[0];
 ?>
     <head>
         <title> The Book Lender - User Home</title>
@@ -25,7 +34,7 @@ and open the template in the editor.
             }
         </style>
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="logout.php">[log out]</a>
+            <a href="logout.php">[Logout]</a>
         </div>
     </head>
     <body>
@@ -47,17 +56,17 @@ and open the template in the editor.
 
                     <td width="25%" align="center">
                         <form method="link" action="browse.php">
-                           <input type="submit" value="Browse">
+                           <input type="submit" value="Search">
                         </form>
                     </td>
 
                      <td width="25%" align="center">
                         <form method="link" action="inbox.php">
-                            <input type="submit" value="messages">
+                            <input type="submit" value="Messages">
                          </form>
                     </td>
                     <td>
-                        rating
+                        Rating: <?php echo $avgRating ?>
                     </td>
                 </tr>
               </table>

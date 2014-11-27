@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Displays a particular message
+Can reply to sender from this page.
 -->
 <?php
 
@@ -31,6 +30,9 @@ and open the template in the editor.
        $body   = $message["mBody"];
    }
 
+    $readUpdateQuery = "Update Messages SET Viewed = 1 WHERE sID = '$recID' AND rID = '$senderID' AND TStamp = '$timeStamp';";
+    mysqli_query($conn, $readUpdateQuery);
+    
 ?>
 <html>
     <head>
@@ -38,7 +40,7 @@ and open the template in the editor.
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="inbox.php">[Inbox]</a> <a href="userPage.php">[Return to User Page]</a> <a href="logout.php">[Logout]</a>
         </div>
     </head>
     
@@ -47,9 +49,14 @@ and open the template in the editor.
             <div><h1>Message</h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <table>
-                       <tr>
-                           <td>reply</td><td>delete</td>
-                       </tr>
+                            <tr>
+                               <td>
+                                   <form method="POST" action="WriteaMessage.php">
+                                       <input type="hidden" name="id" value=<?php echo $recID; ?>/>
+                                        <input type="submit" value="Reply"/>
+                                   </form>
+                               </td>
+                            </tr>
                     </table>
                 </div>
                 <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">

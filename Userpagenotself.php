@@ -10,10 +10,14 @@ and open the template in the editor.
     include "dataConnect.php";
     
     session_start();
+    if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
+        $loggedin = FALSE;
+    }
+    else {
+        $loggedin = TRUE;
+    }
     
-    $_SESSION["pageUser"] = $_GET["id"];
-    
-    $userID = $_SESSION["pageUser"];
+    $userID = $_GET["id"];
     
     $query  = "SELECT * FROM User WHERE UserID = '$userID';";
     $result = mysqli_query($conn, $query);
@@ -27,6 +31,10 @@ and open the template in the editor.
         $username = "Missing User";
     }
 
+    $ratingQuery = "SELECT AVG(Rating) FROM Feedback WHERE rID='$userID'";
+    $getRating = mysqli_query($conn, $ratingQuery);
+    $fetchRating = mysqli_fetch_array($getRating);
+    $avgRating = $fetchRating[0];
 
 ?>
 
@@ -35,8 +43,16 @@ and open the template in the editor.
         <title>The Book Lender</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+        <div style='text-align: right; text-decoration-color: blue'>
+        <?php
+            if($loggedin) {
+                echo " <a href='userPage.php'> [Return to User Page]</a> <a href='logout.php'>[Logout]</a>";
+            }
+            else
+            {
+                echo "<a href='index.php'>[Home]</a>";
+            }
+        ?>
         </div>
     </head>
     
@@ -44,34 +60,23 @@ and open the template in the editor.
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
             <h1> <?php echo $username . "'s profile"; ?> </h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
-                <table> 
-                     <TD>
-                        <form method="GET" action="WriteaMessage.php">
-                            <input type="submit" value="Send Message" />
-                        </form>
-                     </TD>
+                <table>
+                    <?php
+                        if($loggedin) {
+                            echo "<td><form method='POST' action='WriteaMessage.php'>"
+                               ."<input type='hidden' name='id' value=$userID>"
+                               ."<input type='submit' value='Send Message'> </form></td>
                      <td>
-                         <?php
-                         if (isset($_SESSION["sess_user_id"]))
-                         {
-                         echo "<form method='GET' action='rateMe.php?eid=$userID'>
-                         <select>
-                             <option>Rate This User?</option>
-                             <option value='1'> 1 </option>
-                             <option value='2'> 2 </option>
-                             <option value='3'> 3 </option>
-                             <option value='4'> 4 </option>
-                             <option value='5'> 5 </option>
-                             <option value='6'> 6 </option>
-                             <option value='7'> 7 </option>
-                             <option value='8'> 8 </option>
-                             <option value='9'> 9 </option>
-                             <option value='10'> 10 </option>
-                         </select>
-                             <input type='submit' value='Rate User' />
-                         </form>";
+                                <form method='GET' action='rateMe.php'>
+                                    <input type='hidden' name='eid' value='$userID' />
+                                    <input type='hidden' name='uname' value='$username' />
+                                    <input type='submit' value='Rate User' />
+                                </form>";
                         }
                      ?>
+                     </td>
+                     <td>
+                         <b>Trader Rating: <?php echo $avgRating ?></b>
                      </td>
                 </table>
             </div>

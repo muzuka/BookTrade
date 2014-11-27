@@ -12,7 +12,11 @@ and open the template in the editor.
     exit();
     }
     
-    $recID = $_SESSION["pageUser"];
+    if(isset($_POST["id"])) {
+        $recID = $_POST["id"];
+    }
+    
+    
     
 ?>
 <html>
@@ -21,7 +25,7 @@ and open the template in the editor.
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [Return to User Page]</a> <a href="logout.php">[Logout]</a>
         </div>
     </head>
     
@@ -37,18 +41,18 @@ and open the template in the editor.
                     <table>
                         <tr>
                             <td>
+                                <input type="hidden" name="recID" value=<?php echo $recID; ?>>
                                 <input type='submit' value="send" name="submit">
                             </td>
                             <td>
                                 <input type="submit" value="delete" name="submit">
                             </td>
-                            <td><input type="file" name="attach" id="fileUploaded"></td>
                         </tr>
                     </table>
                 </div>
                 <p>
                     <div> Subject </div>
-                    <textarea name="subject" ROWS="1" cols="40"></textarea>
+                    <input type="text" name="subject" value="Subject" />
                 </p>
                 
                 <p>
