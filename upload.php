@@ -18,7 +18,7 @@
     </head>
     <body>
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [Return to User Page]</a> <a href="logout.php">[Logout]</a>
         </div>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
             <h1>Upload</h1>
