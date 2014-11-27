@@ -55,7 +55,7 @@ $raterID = $_SESSION["sess_user_id"];
                     <tr>
                         <td colspan="2">
                             <?php echo "<input type='hidden' name='raterID' value='$raterID' />"
-                                    . "<input type='hidden' name'ratedID' value='$ratedUserID' />" ?>
+                                    . "<input type='hidden' name='getRatings' value='$ratedUserID' />" ?>
                             <input type="submit" value="Rate" name="rate" />
                         </td>
                     </tr>

@@ -9,19 +9,21 @@
 include 'dataConnect.php';
 
 $raterID = $_POST['raterID'];
-$ratedUserID = $_POST['ratedID'];
+$ratedUserID = $_POST['getRatings'];
 $score = $_POST['numRating'];
 $ratingBody = $_POST['ratingText'];
 
-$ratingQuery = "INSERT INTO Feedback (sID, rID, Body, Rating) VALUES ($raterID, $ratedUserID, $ratingBody, $score)";
+echo "$raterID   ";
+echo $ratedUserID;
+
+$ratingQuery = "INSERT INTO Feedback (sID, rID, Body, Rating) VALUES ('$raterID', '$ratedUserID', '$ratingBody', $score)";
 
 if($conn->query($ratingQuery) === TRUE )
 {
-    echo "Review Posted Successfully!";
+    header("location: browse.php");
 }
 else
 {
     echo "Error: " . $ratingQuery . "<br>" . $conn->error;
 }
 
-header("location: browse.php");
