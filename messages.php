@@ -50,13 +50,7 @@ Can reply to sender and delete the message from this page.
                                <td>
                                    <form method="POST" action="WriteaMessage.php">
                                        <input type="hidden" name="id" value=<?php echo $recID; ?>/>
-                                        <input type="submit" value="reply"/>
-                                   </form>
-                               </td>
-                               
-                               <td>
-                                   <form method="POST" action="deleteMessage.php">
-                                        <input type="submit" value="delete"/>
+                                        <input type="submit" value="Reply"/>
                                    </form>
                                </td>
                             </tr>
