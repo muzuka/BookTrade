@@ -25,7 +25,7 @@ and open the template in the editor.
         <div style=" text-align: right; text-decoration-color: blue">
             <?php
                 if($loggedin) {
-                    echo "<a href='userPage.php'> [return to user page]</a> <a href='logout.php'>[log out]</a>";
+                    echo "<a href='userPage.php'> [Return to User Page]</a> <a href='logout.php'>[Logout]</a>";
                 }
             ?>
         </div>

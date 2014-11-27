@@ -34,7 +34,7 @@ $raterID = $_SESSION["sess_user_id"];
                 <table>
                     <tr>
                         <td>Rating: </td>
-                        <td><select>
+                        <td><select name="numRating">
                              <option value='0'> 0 </option>
                              <option value='1'> 1 </option>
                              <option value='2'> 2 </option>
