@@ -37,7 +37,7 @@ Can reply to sender and delete the message from this page.
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="userPage.php"> [return to user page]</a> <a href="logout.php">[log out]</a>
+            <a href="userPage.php"> [Return to User Page]</a> <a href="logout.php">[Logout]</a>
         </div>
     </head>
     
