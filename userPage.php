@@ -71,7 +71,7 @@ and open the template in the editor.
                 </tr>
               </table>
             </div>
-          <p style="font-size: 25px">Your Books</p>
+          <p style="font-size: 25px" />Your Books
           <table>
               <?php
               
