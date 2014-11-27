@@ -91,10 +91,16 @@ and open the template in the editor.
                     <td>Owner:</td>
                     <td><?php echo $username; ?></td>
                 </tr>
-                <tr>
+                <?php
+                if ($loggedin)
+                {
+                    echo "<tr>
                     <td>Email:</td>
-                    <td><?php echo $email; ?></td>
-                </tr>
+                    <td>$email</td>
+                    </tr>";
+                }
+                ?>
+                
                 <tr>
                     <td>Book Title:</td>
                     <td><?php echo $title; ?></td>
