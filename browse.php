@@ -39,8 +39,8 @@ and open the template in the editor.
                     <p> </p>
                 </div>
                 <form method="post" action="browse.php">
-                    <p><input type="search" name="search" placeholder="search">
-                    <input type="submit" value="submit" name="Search"></p>
+                    <p><input type="search" name="search" placeholder="Title/Author">
+                    <input type="submit" value="Search" name="Search"></p>
                 </form>
                 <?php
                     if(isset($_POST["search"])) {
