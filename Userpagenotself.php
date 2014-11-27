@@ -68,7 +68,7 @@ and open the template in the editor.
                          <?php
                          if (isset($_SESSION["sess_user_id"]))
                          {
-                         echo "<form method='GET' action='rateMe.php?eid=$userID'>
+                         echo "<form method='GET' action='rateMe.php?eid=$userID&uname=$username'>
                          <select>
                              <option value='r'> Rate This User? </option>
                              <option value='1'> 1 </option>
