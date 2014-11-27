@@ -85,13 +85,24 @@ and open the template in the editor.
                                     $timeStamp = $row["TStamp"];
                                     $subject   = $row["Subject"];
                                     $viewed    = $row["Viewed"];
-                                    
-                                    echo "<tr><br/>";
-                                    echo "<td> $sender </td>";
-                                    echo "<td>";
-                                    echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'> $subject </a></td>";
-                                    echo "<td> $timeStamp</td>";
-                                    echo "</tr>";
+                                    if ($row['Viewed'] == 0)
+                                    {
+                                        echo "<tr><br/>";
+                                        echo "<td><b> $sender </b></td>";
+                                        echo "<td>";
+                                        echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'><b> $subject </b></a></td>";
+                                        echo "<td><b> $timeStamp </b></td>";
+                                        echo "</tr>";
+                                    }
+                                    else
+                                    {
+                                        echo "<tr><br/>";
+                                        echo "<td> $sender </td>";
+                                        echo "<td>";
+                                        echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'> $subject </a></td>";
+                                        echo "<td> $timeStamp</td>";
+                                        echo "</tr>";  
+                                    }
                                 }
                             
                             ?>
