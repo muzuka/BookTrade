@@ -66,11 +66,11 @@ and open the template in the editor.
         <div style='text-align: right; text-decoration-color: blue'>
             <?php
             if($loggedin) {
-                echo "<a href='userPage.php'> [Return to User Page]</a> <a href='logout.php'>[Logout]</a>";
+                echo "<a href='browse.php'>[Search]</a> <a href='userPage.php'>[Return to User Page]</a> <a href='logout.php'>[Logout]</a>";
             }
             else
             {
-                echo "<a href='index.php'>[Home]</a>";
+                echo "<a href='browse.php'>[Search]</a> <a href='index.php'>[Home]</a>";
             }
             ?>
         </div>
