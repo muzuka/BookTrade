@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 Displays a particular message
-Can reply to sender and delete the message from this page.
+Can reply to sender from this page.
 -->
 <?php
 
