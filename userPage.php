@@ -25,7 +25,7 @@ and open the template in the editor.
             }
         </style>
         <div style=" text-align: right; text-decoration-color: blue">
-            <a href="logout.php">[log out]</a>
+            <a href="logout.php">[Logout]</a>
         </div>
     </head>
     <body>
