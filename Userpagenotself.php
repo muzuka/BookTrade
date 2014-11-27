@@ -65,14 +65,9 @@ and open the template in the editor.
                         if($loggedin) {
                             echo "<td><form method='POST' action='WriteaMessage.php'>"
                                ."<input type='hidden' name='id' value=$userID>"
-                               ."<input type='submit' value='Send Message'> </form></td>";
-                        }
-                    ?>
+                               ."<input type='submit' value='Send Message'> </form></td>
                      <td>
-                         <?php
-                         if (isset($_SESSION["sess_user_id"]))
-                         {
-                         echo   "<form method='GET' action='rateMe.php'>
+                                <form method='GET' action='rateMe.php'>
                                     <input type='hidden' name='eid' value='$userID' />
                                     <input type='hidden' name='uname' value='$username' />
                                     <input type='submit' value='Rate User' />
@@ -81,7 +76,7 @@ and open the template in the editor.
                      ?>
                      </td>
                      <td>
-                         <b>Rating: <?php echo $avgRating ?></b>
+                         <b>Trader Rating: <?php echo $avgRating ?></b>
                      </td>
                 </table>
             </div>
