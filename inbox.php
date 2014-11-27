@@ -18,7 +18,7 @@ and open the template in the editor.
     
     $userID = $_SESSION['sess_user_id'];
     
-    $messageQuery = "SELECT Subject, TStamp, Viewed, sID FROM Messages WHERE rID = '$userID'";
+    $messageQuery = "SELECT Subject, TStamp, Viewed, sID FROM Messages WHERE rID = '$userID' ORDER BY TStamp DESC";
     
     $messageResult = mysqli_query($conn, $messageQuery);
     
