@@ -58,6 +58,11 @@ and open the template in the editor.
                     </table></center>
                 </div>
             </div>
+            <center><table width='80%'><tr><td>
+            The Book Lender is a website in which users can coordinate trades of physical books.
+            All of the team here at The Book Lender love having physical copies of books; it makes
+            the books we love so much more cherishable than having them on e-Readers or tablets or phones.
+            </td></tr></table></center>
         </div>
     </body>
 </html>
