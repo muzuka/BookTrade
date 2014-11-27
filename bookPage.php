@@ -63,15 +63,17 @@ and open the template in the editor.
         <title>The Book Lender | Book</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <?php
+        <div style='text-align: right; text-decoration-color: blue'>
+            <?php
             if($loggedin) {
-                echo "<div style='text-align: right; text-decoration-color: blue'> <a href='userPage.php'> [Return to User Page]</a> <a href='logout.php'>[Logout]</a> </div>";
+                echo " <a href='userPage.php'> [Return to User Page]</a> <a href='logout.php'>[Logout]</a>";
             }
             else
             {
                 echo "<a href='index.php>[Home]</a>'";
             }
-        ?>
+            ?>
+        </div>
     </head>
 
     
