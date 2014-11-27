@@ -58,11 +58,25 @@ and open the template in the editor.
                     </table></center>
                 </div>
             </div>
-            <center><table width='80%'><tr><td>
-            The Book Lender is a website in which users can coordinate trades of physical books.
-            All of the team here at The Book Lender love having physical copies of books; it makes
-            the books we love so much more cherishable than having them on e-Readers or tablets or phones.
-            </td></tr></table></center>
+            <center><table width='80%'>
+                    <tr>
+                        <td>
+                            <p />The Book Lender was created as a project for a computer science class on Database 
+                            technologies at the University of Calgary. It was designed and implemented here by a 
+                            group of three: (in alphabetical order) Andrew Lata, Laura Berry, and Sean Brown.
+                            <p />We chose this as the topic of our project because, put simply, we love books. We love 
+                            the stories that they tell and the thoughts that they provoke. Nowadays, as with all things, 
+                            technology is beginning to replace a medium that we all grew up with and came to love: the 
+                            physical copy of a good book. 
+                            <p />With this in mind we, The Book Trader Team, would like to take the time to nurture a love 
+                            of books for all people. We feel that a book is something that should be shared, that the insights 
+                            and opinions that that story alludes to deserve to and should be discussed. And through this 
+                            understanding of a good story through discussion and debate everyone is able, as the Greek aphorism 
+                            goes, to "Know thyself". And with this knowledge you are equipped to venture through life and know 
+                            the world around you.
+                        </td>
+                    </tr>
+            </table></center>
         </div>
     </body>
 </html>
