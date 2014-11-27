@@ -1,6 +1,17 @@
+<?php
+session_start();
+include "dataConnect.php";
+
+$ratedID = $_GET['rid'];
+
+$ratingQuery = "SELECT (s.Username, f.Body, f.Rating) FROM Feedback AS f JOIN User AS s WHERE f.rID=$ratedID AND s.UserID=f.sID;";
+$ratingResult = mysqli_query($conn, $ratingQuery);
+
+$numRating = mysqli_num_rows($ratingResult);
+?>
 <html>
     <head>
-        <title>The Book Lender | Available Books</title>
+        <title>The Book Lender | User Reviews</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style=" text-align: right; text-decoration-color: blue">
