@@ -30,6 +30,9 @@ Can reply to sender from this page.
        $body   = $message["mBody"];
    }
 
+    $readUpdateQuery = "Update Messages SET Viewed = 1 WHERE sID = '$recID' AND rID = '$senderID' AND TStamp = '$timeStamp';";
+    mysqli_query($conn, $readUpdateQuery);
+    
 ?>
 <html>
     <head>
