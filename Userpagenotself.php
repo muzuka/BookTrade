@@ -17,9 +17,7 @@ and open the template in the editor.
         $loggedin = TRUE;
     }
     
-    $_SESSION["pageUser"] = $_GET["id"];
-    
-    $userID = $_SESSION["pageUser"];
+    $userID = $_GET["id"];
     
     $query  = "SELECT * FROM User WHERE UserID = '$userID';";
     $result = mysqli_query($conn, $query);
@@ -55,7 +53,9 @@ and open the template in the editor.
                 <table>
                     <?php
                         if($loggedin) {
-                            echo "<td><form method='GET' action='WriteaMessage.php'> <input type='submit' value='send message'/> </form></td>";
+                            echo "<td><form method='POST' action='WriteaMessage.php'>"
+                               ."<input type='hidden' name='id' value=$userID>"
+                               ."<input type='submit' value='send message'> </form></td>";
                         }
                     ?>
                      <td>
