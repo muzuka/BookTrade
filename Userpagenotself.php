@@ -61,7 +61,7 @@ and open the template in the editor.
                         if($loggedin) {
                             echo "<td><form method='POST' action='WriteaMessage.php'>"
                                ."<input type='hidden' name='id' value=$userID>"
-                               ."<input type='submit' value='send message'> </form></td>";
+                               ."<input type='submit' value='Send Message'> </form></td>";
                         }
                     ?>
                      <td>
