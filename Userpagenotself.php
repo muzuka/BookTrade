@@ -31,6 +31,10 @@ and open the template in the editor.
         $username = "Missing User";
     }
 
+    $ratingQuery = "SELECT AVG(Rating) FROM Feedback WHERE rID='$userID'";
+    $getRating = mysqli_query($conn, $ratingQuery);
+    $fetchRating = mysqli_fetch_array($getRating);
+    $avgRating = $fetchRating[0];
 
 ?>
 
@@ -75,6 +79,9 @@ and open the template in the editor.
                                 </form>";
                         }
                      ?>
+                     </td>
+                     <td>
+                         <b>Rating: <?php echo $avgRating ?></b>
                      </td>
                 </table>
             </div>
