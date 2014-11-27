@@ -70,7 +70,7 @@ and open the template in the editor.
                          {
                          echo "<form method='GET' action='rateMe.php?eid=$userID'>
                          <select>
-                             <option>Rate This User?</option>
+                             <option value='r'> Rate This User? </option>
                              <option value='1'> 1 </option>
                              <option value='2'> 2 </option>
                              <option value='3'> 3 </option>
