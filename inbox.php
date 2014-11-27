@@ -88,7 +88,7 @@ and open the template in the editor.
                                     if ($row['Viewed'] == 0)
                                     {
                                         echo "<tr><br/>";
-                                        echo "<td><b> $sender </b></td>";
+                                        echo "<td><a href='Userpagenotself.php?id=$senderID'><b> $sender </b></a></td>";
                                         echo "<td>";
                                         echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'><b> $subject </b></a></td>";
                                         echo "<td><b> $timeStamp </b></td>";
@@ -97,7 +97,7 @@ and open the template in the editor.
                                     else
                                     {
                                         echo "<tr><br/>";
-                                        echo "<td> $sender </td>";
+                                        echo "<td><a href='Userpagenotself.php?id=$senderID'> $sender </a></td>";
                                         echo "<td>";
                                         echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'> $subject </a></td>";
                                         echo "<td> $timeStamp</td>";
