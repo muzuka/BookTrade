@@ -46,7 +46,7 @@ and open the template in the editor.
             }
             else
             {
-                echo "<a href='index.php'>Home</a>";
+                echo "<a href='index.php'>[Home]</a>";
             }
         ?>
         </div>

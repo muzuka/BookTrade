@@ -67,6 +67,10 @@ and open the template in the editor.
             if($loggedin) {
                 echo "<div style='text-align: right; text-decoration-color: blue'> <a href='userPage.php'> [Return to User Page]</a> <a href='logout.php'>[Logout]</a> </div>";
             }
+            else
+            {
+                echo "<a href='index.php>[Home]</a>'";
+            }
         ?>
     </head>
 
