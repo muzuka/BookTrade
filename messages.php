@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Displays a particular message
+Can reply to sender and delete the message from this page.
 -->
 <?php
 
@@ -47,9 +46,20 @@ and open the template in the editor.
             <div><h1>Message</h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <table>
-                       <tr>
-                           <td>reply</td><td>delete</td>
-                       </tr>
+                            <tr>
+                               <td>
+                                   <form method="POST" action="WriteaMessage.php">
+                                       <input type="hidden" name="id" value=<?php echo $recID; ?>/>
+                                        <input type="submit" value="reply"/>
+                                   </form>
+                               </td>
+                               
+                               <td>
+                                   <form method="POST" action="deleteMessage.php">
+                                        <input type="submit" value="delete"/>
+                                   </form>
+                               </td>
+                            </tr>
                     </table>
                 </div>
                 <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
