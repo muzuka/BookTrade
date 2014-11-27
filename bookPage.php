@@ -65,7 +65,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php
             if($loggedin) {
-                echo "<div style='text-align: right; text-decoration-color: blue'> <a href='userPage.php'> [return to user page]</a> <a href='logout.php'>[log out]</a> </div>";
+                echo "<div style='text-align: right; text-decoration-color: blue'> <a href='userPage.php'> [Return to User Page]</a> <a href='logout.php'>[Logout]</a> </div>";
             }
         ?>
     </head>
