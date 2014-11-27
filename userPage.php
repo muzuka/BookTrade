@@ -47,13 +47,13 @@ and open the template in the editor.
 
                     <td width="25%" align="center">
                         <form method="link" action="browse.php">
-                           <input type="submit" value="Browse">
+                           <input type="submit" value="Search">
                         </form>
                     </td>
 
                      <td width="25%" align="center">
                         <form method="link" action="inbox.php">
-                            <input type="submit" value="messages">
+                            <input type="submit" value="Messages">
                          </form>
                     </td>
                     <td>
