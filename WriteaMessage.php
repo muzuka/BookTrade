@@ -12,7 +12,11 @@ and open the template in the editor.
     exit();
     }
     
-    $recID = $_SESSION["pageUser"];
+    if(isset($_POST["id"])) {
+        $recID = $_POST["id"];
+    }
+    
+    
     
 ?>
 <html>
@@ -37,6 +41,7 @@ and open the template in the editor.
                     <table>
                         <tr>
                             <td>
+                                <input type="hidden" name="recID" value=<?php echo $recID; ?>>
                                 <input type='submit' value="send" name="submit">
                             </td>
                             <td>
