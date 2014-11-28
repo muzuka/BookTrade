@@ -10,6 +10,7 @@ and open the template in the editor.
     include "dataConnect.php";
 
     session_start();
+    $loggedInUser = $_SESSION['sess_username'];
     //Check whether the session variable SESS_USER_ID is present or not
     if(!isset($_SESSION['sess_user_id']) || (trim($_SESSION['sess_user_id']) === '')) {
         header("location: loginPage.php");
@@ -39,7 +40,7 @@ and open the template in the editor.
     </head>
     <body>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-          <h1> <?php echo $_SESSION["sess_username"] . "'s Profile"; ?> </h1>
+          <h1> <?php echo $loggedInUser . "'s Profile"; ?> </h1>
             <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                 <table width="100%">
                 <tr>
@@ -66,7 +67,7 @@ and open the template in the editor.
                          </form>
                     </td>
                     <td>
-                        <a href="userRating.php?rid=<?php echo $currID ?>">Rating: <?php echo $avgRating ?></a>
+                        <a href="userRating.php?rid=<?php echo $currID . 'rname=' . $loggedInUser ?>">Rating: <?php echo $avgRating ?></a>
                     </td>
                 </tr>
               </table>
