@@ -4,7 +4,7 @@ include "dataConnect.php";
 
 $ratedID = $_GET['rid'];
 
-$ratingQuery = "SELECT f.Body, f.Rating, s.Username FROM Feedback AS f INNER JOIN User AS s ON f.sID=s.UserID WHERE f.rID=$ratedID;";
+$ratingQuery = "SELECT f.Body, f.Rating, s.Username FROM Feedback AS f INNER JOIN User AS s ON f.sID=s.UserID WHERE f.rID='$ratedID';";
 $ratingResult = mysqli_query($conn, $ratingQuery);
 $ratingCount = mysqli_num_rows($ratingResult);
 
