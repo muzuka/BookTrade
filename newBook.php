@@ -9,10 +9,10 @@
 session_start();
 include 'dataConnect.php';
 
-$title = $_POST['title'];
-$author = $_POST['author'];
+$title = mysqli_real_escape_string($conn, $_POST['title']);
+$author = mysqli_real_escape_string($conn, $_POST['author']);
 $quality = $_POST['quality'];
-$description = $_POST['description'];
+$description = mysqli_real_escape_string($conn, $_POST['description']);
 $oid = $_SESSION['sess_user_id'];
 $nbid = mysqli_query($conn, "SELECT UUID()");
 $row = mysqli_fetch_assoc($nbid);
@@ -37,7 +37,7 @@ if(isset($_FILES['picture']) && $_FILES['picture']['size'] > 0)// && isset($_POS
 {
     $tmpName = $_FILES['picture']['tmp_name'];
     
-    $ptxt = $_POST['ptext'];
+    $ptxt = mysqli_real_escape_string($conn, $_POST['ptext']);
     $fp = fopen($tmpName, 'r');
     $data = fread($fp, filesize($tmpName));
     $data = addslashes($data);
