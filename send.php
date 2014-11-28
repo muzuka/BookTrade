@@ -20,8 +20,8 @@ else {
     $sendID = $_SESSION["sess_user_id"];
     
     $date = date("Y-m-d h:i:s");
-    $message = str_replace("'", "''", $message);
-    $subject = str_replace("'", "''", $subject);
+    $message = mysqli_real_escape_string($conn, $message);
+    $subject = mysqli_real_escape_string($conn, $subject);
     
     $query = "INSERT INTO Messages(mBody, rID, sID, Subject, TStamp, Viewed) VALUES ('$message', '$recID', '$sendID', '$subject', '$date', 0);";
     $result = mysqli_query($conn, $query);
