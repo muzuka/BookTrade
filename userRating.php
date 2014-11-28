@@ -5,13 +5,14 @@ include "dataConnect.php";
 $ratedID = $_GET['rid'];
 $ratedUsername = $_GET['rname'];
 
+$averageRatingQuery = "SELECT AVG(Rating) FROM Feedback WHERE rID='$ratedID'";
+$getAverage = mysqli_query($conn, $averageRatingQuery);
+$fetchAverage = mysqli_fetch_array($getAverage);
+$avgRating = $fetchAverage[0];
+
 $ratingQuery = "SELECT f.Body, f.Rating, s.Username FROM Feedback AS f INNER JOIN User AS s ON f.sID=s.UserID WHERE f.rID='$ratedID';";
 $ratingResult = mysqli_query($conn, $ratingQuery);
 $ratingCount = mysqli_num_rows($ratingResult);
-
-
-
-
 
 ?>
 <html>
@@ -27,7 +28,7 @@ $ratingCount = mysqli_num_rows($ratingResult);
             <div>
                 <h1>User Ratings for <?php echo $ratedUsername ?></h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
-                    <p /> Average Rating for user here
+                    <p /> Average Rating: <?php echo $avgRating ?>
                 </div>
                 <table>
                     <?php
