@@ -29,17 +29,12 @@ $ratingCount = mysqli_num_rows($ratingResult);
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <p /><b> Average Rating: <?php echo $avgRating ?></b>
                 </div>
+                <center>
                 <table>
                     <tr>
-                        <td>
-                            Sent By
-                        </td>
-                        <td>
-                            Rating
-                        </td>
-                        <td>
-                            Comments
-                        </td>
+                        <td>| <b>Sent By</b> |</td>
+                        <td>| <b>Rating</b> |</td>
+                        <td>| <b>Comments</b> |</td>
                     </tr>
                     <?php
                     
@@ -70,6 +65,7 @@ $ratingCount = mysqli_num_rows($ratingResult);
                     }
                     ?>
                 </table>
+                </center>
                 <div style="font-size: 20px; font-style: oblique; text-align: center">
                 </div>
             </div>
