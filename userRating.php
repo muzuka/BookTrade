@@ -25,15 +25,49 @@ $ratingCount = mysqli_num_rows($ratingResult);
      <body>
          <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
             <div>
-                <h1>User Ratings for <?php echo $ratedUsername ?></h1>
+                <h1>User Ratings for "<?php echo $ratedUsername ?>"</h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <p /><b> Average Rating: <?php echo $avgRating ?></b>
                 </div>
                 <table>
+                    <tr>
+                        <td>
+                            Sent By
+                        </td>
+                        <td>
+                            Rating
+                        </td>
+                        <td>
+                            Comments
+                        </td>
+                    </tr>
                     <?php
                     
                     // Rating query results will be looped and displayed here
-                    
+                    if($ratingCount==0)
+                    {
+                        echo '<tr><td>This User has not yet been rated.</td></tr>';
+                    }
+                    else
+                    {
+                        for ($i=0; $i<$ratingCount; $i++)
+                        {
+                            echo '<tr>';                       
+                            $currRow=mysqli_fetch_assoc($ratingResult);
+                            
+                            $ratingBody = $currRow["Body"];
+                            $ratingValue = $currRow["Rating"];
+                            $sentUser = $currRow["Username"];
+                           
+                            echo "<td> $sentUser </td>";
+                            echo "<td> $ratingValue </td>";
+                            echo "<td> $ratingBody </td>";
+                            
+                            echo "</tr>";
+                        }
+
+                        
+                    }
                     ?>
                 </table>
                 <div style="font-size: 20px; font-style: oblique; text-align: center">

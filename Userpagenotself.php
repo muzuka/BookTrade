@@ -40,7 +40,7 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>The Book Lender</title>
+        <title>The Book Lender | User Page</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div style='text-align: right; text-decoration-color: blue'>
@@ -76,7 +76,7 @@ and open the template in the editor.
                      ?>
                      </td>
                      <td>
-                         <b>Trader Rating: <?php echo $avgRating ?></b>
+                         <a style="color: white" href="userRating.php?rid=<?php echo $userID . '&rname=' . $username ?>"><b>Trader Rating: <?php echo $avgRating ?></b></a>
                      </td>
                 </table>
             </div>

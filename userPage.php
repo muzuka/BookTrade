@@ -67,7 +67,7 @@ and open the template in the editor.
                          </form>
                     </td>
                     <td>
-                        <a href="userRating.php?rid=<?php echo $currID . '&rname=' . $loggedInUser ?>">Rating: <?php echo $avgRating ?></a>
+                        <a style="color: white" href="userRating.php?rid=<?php echo $currID . '&rname=' . $loggedInUser ?>">Rating: <?php echo $avgRating ?></a>
                     </td>
                 </tr>
               </table>
