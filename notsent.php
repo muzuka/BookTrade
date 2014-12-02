@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+BookTrade Website
+Authored by: Sean Brown, Andrew Lata, and Laura Berry
+This is an error page for a message that does not send properly
 -->
 <html>
     <head>

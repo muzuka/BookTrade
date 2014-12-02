@@ -1,3 +1,8 @@
+<!--
+BookTrade Website
+Authored by: Sean Brown, Andrew Lata, and Laura Berry
+This is the book search function
+
 <?php
 
 /* 

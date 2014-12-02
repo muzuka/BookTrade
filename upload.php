@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!--
-
+BookTrade Website
+Authored by: Sean Brown, Andrew Lata, and Laura Berry
+This is the new book upload dialogue
 -->
 <html>
 <?php

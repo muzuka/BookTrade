@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <!--
+BookTrade Website
+Authored by: Sean Brown, Andrew Lata, and Laura Berry
 Displays a particular message
 Can reply to sender from this page.
 -->

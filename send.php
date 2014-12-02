@@ -1,3 +1,9 @@
+
+<!--
+BookTrade Website
+Authored by: Sean Brown, Andrew Lata, and Laura Berry
+This is a message sending function
+-->
 <?php
 
 include "dataConnect.php";

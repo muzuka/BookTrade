@@ -1,11 +1,11 @@
+<!--
+BookTrade Website
+Authored by: Sean Brown, Andrew Lata, and Laura Berry
+This is a logout function
+-->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 session_start();
 session_unset();

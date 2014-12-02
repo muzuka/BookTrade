@@ -1,3 +1,9 @@
+<!--
+BookTrade Website
+Authored by: Sean Brown, Andrew Lata, and Laura Berry
+This is a login function retrieved by the login page
+-->
+
 <?php
 //ob_start();
 session_start();

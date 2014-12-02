@@ -1,3 +1,8 @@
+<!--
+BookTrade Website
+Authored by: Sean Brown, Andrew Lata, and Laura Berry
+This shows all current ratings for the selected user
+-->
 <?php
 session_start();
 include "dataConnect.php";
