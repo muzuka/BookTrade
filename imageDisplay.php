@@ -17,13 +17,31 @@ if (!isset($bID) || empty($bID))
 }
 else
 {
-    $pictureQuery = "SELECT Picture FROM Picture WHERE bID = '" . $bID . "';";
-    $picResult = mysqli_query($conn, $pictureQuery);
-    $picRow = mysqli_fetch_assoc($picResult);
-    $picture = $picRow['Picture'];
 
-    header('content-type: image/jpg');
-    header('content-length: ' . strlen($picture));
+    
+    $pictureQuery = "SELECT Picture FROM Picture WHERE bID = '" . $bID . "';";
+    
+    $picResult = mysqli_query($conn, $pictureQuery);
+    if ($picResult)
+    {
+        $picRow = mysqli_fetch_assoc($picResult);
+        $picture = $picRow['Picture'];
+    }
+    else
+    {
+        $picture = "";
+    }
+    
+    if(strlen($picture)>0)
+    {
+        header('Content-type: image/jpg');        
+        header('Content-length: ' . strlen($picture));
         echo $picture;
+    }
+    else
+    {
+        echo "There is no picture for this book.";
+    }
+        
 }
    

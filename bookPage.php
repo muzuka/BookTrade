@@ -43,7 +43,7 @@ This is the page where individual books are shown
         $description = "";
     }
     
-    $imageQuery = "SELECT bID, pText FROM Picture WHERE bID='$bID'";
+    $imageQuery = "SELECT bID, pText FROM Picture WHERE bID='$bookID'";
     $imageResult = mysqli_query($conn, $imageQuery);
     
     if($imageResult)
@@ -84,7 +84,9 @@ This is the page where individual books are shown
                     <p></p>
                 </div>
             <div style="background-color: white; color:black; margin:10px; padding: 10px">
-                <?php echo "<a href='imageDisplay.php?bid=$bID'>$pTxt</a>"; ?>
+                <?php 
+                    echo "<a href='imageDisplay.php?bid=$bID'>$pTxt</a>"; 
+                ?>
             </div>  
             <p></p>
             <div>Book information</div>
