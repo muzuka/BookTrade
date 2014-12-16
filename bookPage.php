@@ -85,6 +85,7 @@ This is the page where individual books are shown
                 </div>
             <div style="background-color: white; color:black; margin:10px; padding: 10px">
                 <?php 
+                    //echo "<img src='imageDisplay.php?bid=$bID' />";
                     echo "<a href='imageDisplay.php?bid=$bID'>$pTxt</a>"; 
                 ?>
             </div>  

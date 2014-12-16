@@ -22,8 +22,8 @@ else
     $picRow = mysqli_fetch_assoc($picResult);
     $picture = $picRow['Picture'];
 
-    header('content-type: image/jpeg');
-    header('content-length: ' . strlen($picture));
-        echo $picture;
+    //header('content-type: image/jpeg');
+    //header('content-length: ' . strlen($picture));
+        echo "<img src='data:image/jpeg;base64," . base64_encode($picture) . "'/>";
 }
    
