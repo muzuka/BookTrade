@@ -58,16 +58,13 @@ This is a user's inbox
     
     <body>
         <div style="background-color: beige; color:black; margin: 20px; padding: 20px">
-            <div>
                 <h1>Inbox</h1>
                 <div style="background-color:blue; color:white; margin:10px; padding:5px;text-align: center">
                     <p/>
                 </div>
-                <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
-                    <body>
-                    <center>
-                        <table width="80%">
-                            <tr><td><h4><b>From:</b></h4></td><td><h4><b>Subject:</b></h4></td><td><h4><b>Date:</b></h4></td></tr>
+                <div style="background-color: lightgray; color:black; padding: 2px; padding-top: 0px; padding-left: 20px; padding-right: 20px; padding-bottom: 20px">
+                    <table>
+                        <tr style="column-fill: auto"><th><center><h4><b> From: </b></h4></center></th><th><center><h4><b> Subject: </b></h4></center></th><th><center><h4><b> Date: </b></h4></center></th></tr>
                             <?php
                             
                                 if($numOfMessages == 0) {
@@ -91,10 +88,9 @@ This is a user's inbox
                                     $viewed    = $row["Viewed"];
                                     if ($row['Viewed'] == 0)
                                     {
-                                        echo "<tr><br/>";
+                                        echo "<tr>";
                                         echo "<td><a href='Userpagenotself.php?id=$senderID'><b> $sender </b></a></td>";
-                                        echo "<td>";
-                                        echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'><b> $subject </b></a></td>";
+                                        echo "<td><a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'><b> $subject </b></a></td>";
                                         echo "<td><b> $timeStamp </b></td>";
                                         echo "</tr>";
                                     }
@@ -102,8 +98,7 @@ This is a user's inbox
                                     {
                                         echo "<tr><br/>";
                                         echo "<td><a href='Userpagenotself.php?id=$senderID'> $sender </a></td>";
-                                        echo "<td>";
-                                        echo "<a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'> $subject </a></td>";
+                                        echo "<td><a href='messages.php?sid=$userID&rid=$senderID&time=$timeStamp&sender=$sender'> $subject </a></td>";
                                         echo "<td> $timeStamp</td>";
                                         echo "</tr>";  
                                     }
@@ -111,11 +106,8 @@ This is a user's inbox
                             
                             ?>
                         </table>
-                    </center>
-                    </body>
                 </div>
             </div>
-        </div>
     </body>
 </html>
 
