@@ -65,7 +65,9 @@ This is a user's inbox
                 </div>
                 <div style="background-color: lightgray; color:black; margin: 20px; padding: 20px">
                     <body>
-                        <table>
+                    <center>
+                        <table width="80%">
+                            <tr><td><h4><b>From:</b></h4></td><td><h4><b>Subject:</b></h4></td><td><h4><b>Date:</b></h4></td></tr>
                             <?php
                             
                                 if($numOfMessages == 0) {
@@ -109,6 +111,7 @@ This is a user's inbox
                             
                             ?>
                         </table>
+                    </center>
                     </body>
                 </div>
             </div>
