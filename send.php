@@ -28,6 +28,10 @@ else {
     $date = date("Y-m-d h:i:s");
     $message = mysqli_real_escape_string($conn, $message);
     $subject = mysqli_real_escape_string($conn, $subject);
+    if (empty($subject))
+    {
+        $subject = "Message";
+    }
     
     $query = "INSERT INTO Messages(mBody, rID, sID, Subject, TStamp, Viewed) VALUES ('$message', '$recID', '$sendID', '$subject', '$date', 0);";
     $result = mysqli_query($conn, $query);

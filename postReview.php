@@ -10,7 +10,7 @@ $raterID = $_POST['raterID'];
 $ratedUserID = $_POST['getRatings'];
 $score = $_POST['numRating'];
 $ratingBody = $_POST['ratingText'];
-
+$ratingBody = mysqli_real_escape_string($conn, $ratingBody);
 echo "$raterID   ";
 echo $ratedUserID;
 
