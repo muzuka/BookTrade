@@ -9,12 +9,12 @@ include "dataConnect.php";
 
 $postQuery = $_POST['query'];
 
-$query = "SELECT Username, Title, Author FROM User INNER JOIN Book WHERE (Author LIKE '%$postQuery%') OR (Title LIKE '%$postQuery%');";
+$query = "SELECT Username, Title, Author, bID FROM User INNER JOIN Book WHERE (Author LIKE '%$postQuery%') OR (Title LIKE '%$postQuery%') AND oID = UserID;";
 
 $result = mysqli_query($conn, $query);
 
-$rows = mysqli_fetch_array($result);
-
 for($i = 0; $i < mysqli_num_rows($result); $i++) {
-    echo $rows[$i];
+    $row = mysqli_fetch_assoc($result);
+    
+    echo "::" . $row['Title'] . ":" . $row['Author'] . ":" . $row['Username'] . ":" . $row['bID'] . "::";
 }
