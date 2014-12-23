@@ -16,5 +16,11 @@ $result = mysqli_query($conn, $query);
 
 $row = mysqli_fetch_assoc($result);
 
-echo $row['Picture'] . ":" . $row['Description'] . ":" . $row['Title'] . ":";
-echo $row['Author'] . ":" . $row['Quality'];
+if(isset($row['Picture'])) {
+    echo ":" . $row['Picture'] . ":";
+}
+else {
+    echo ":None:";
+}
+echo $row['Title'] . ":" . $row['Author'] . ":";
+echo $row['Quality'] . ":" . $row['Description'];
