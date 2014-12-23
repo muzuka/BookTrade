@@ -11,17 +11,28 @@ $ratedUserID = $_POST['getRatings'];
 $score = $_POST['numRating'];
 $ratingBody = $_POST['ratingText'];
 $ratingBody = mysqli_real_escape_string($conn, $ratingBody);
-echo "$raterID   ";
-echo $ratedUserID;
+//echo "$raterID   ";
+//echo $ratedUserID;
 
+$checkQuery = "SELECT (sID, rID) FROM Feedback WHERE sID='$raterID' AND rID='$ratedUserID'";
 $ratingQuery = "INSERT INTO Feedback (sID, rID, Body, Rating) VALUES ('$raterID', '$ratedUserID', '$ratingBody', $score)";
+$ratingUpdate = "UPDATE Feedback SET Body='$ratingBody', Rating=$score WHERE sID='$raterID' AND rID='$ratedUserID'";
 
-if($conn->query($ratingQuery) === TRUE )
+$isThere = mysqli_query($conn, $checkQuery);
+
+if (mysqli_num_rows($isThere) > 0)
 {
-    header("location: browse.php");
+    if($conn->query($ratingQuery) === TRUE )
+    {
+        header("location: browse.php");
+    }   
 }
 else
 {
-    echo "Error: " . $ratingQuery . "<br>" . $conn->error;
+    if($conn->query($ratingUpdate) === TRUE)
+    {
+        header("location: browse.php");
+    }
+    //echo "Error: " . $ratingQuery . "<br>" . $conn->error;
 }
 

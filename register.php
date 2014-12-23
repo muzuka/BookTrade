@@ -26,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['sess_new'] = 1;
         header('Location: loginPage.php');
     } else {
-        echo "Error: " . $newUser . "<br>" . $conn->error;
+        echo "<b>The Username '" . $un . "' has been taken, choose another!</b>";
+        //echo "Error: " . $newUser . "<br>" . $conn->error;
     } 
 }
 
