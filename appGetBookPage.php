@@ -16,11 +16,11 @@ $result = mysqli_query($conn, $query);
 
 $row = mysqli_fetch_assoc($result);
 
-if(isset($row['Picture'])) {
+if(strlen($row['Picture']) != 0) {
     echo ":" . $row['Picture'] . ":";
 }
 else {
-    echo ":None:";
+    echo ":No Image:";
 }
 echo $row['Title'] . ":" . $row['Author'] . ":";
 echo $row['Quality'] . ":" . $row['Description'];
